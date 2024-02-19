@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:wght@700&family=Oxygen:wght@300;400;700&family=Vesper+Libre:wght@700&display=swap');
+* {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.divL {
+    margin: 20px;
+}
+
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 300px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Para que el ancho incluya el padding y el borde */
+}
+
+.button1 {
+    background-color: #00be6f;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button1:hover {
+    background-color: #24875e;
+}
+
+.body1 {
+    background-image: url(../img/fondo.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    width: 280px;
+}
+
+#reg {
+    display: none;
+}
+
+.botonesTop {
+    left: 1%;
+    top: 1%;
+    position: fixed;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #00be6f;
+    color: #fff;
+    border: 2px solid #00be6f;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #14683b;
+    border-color: #14683b;
+}
