@@ -73,7 +73,7 @@
             <br>
             <input type="number" id="codigo">
             <br>
-            <button type="submit" id="codigo" class="button1">Verificar</button>
+            <button type="submit" id="codigoSubmit" class="button1">Verificar</button>
         </div>
 </body>
 </html>

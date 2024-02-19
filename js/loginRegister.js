@@ -137,7 +137,20 @@ function enviarCorreoDes(email) {
     ajaxCorreo.onload = function() {
         if (ajaxCorreo.status == 200) {
             try {
-                console.log(ajaxCorreo.responseText);
+                verification = ajaxCorreo.responseText;
+
+                codigoSubmit = document.getElementById('codigoSubmit');
+                codigoSubmit.addEventListener('click', function() {
+                    // console.log(verification);
+                    codigo = document.getElementById('codigo').value;
+                    if (verification == codigo) {
+                        console.log('codigoVerificado')
+                    } else {
+                        console.log('codigoMal')
+
+                    }
+                });
+
             } catch (error) {
                 console.log('Error al analizar la respuesta JSON:', error.message);
             }

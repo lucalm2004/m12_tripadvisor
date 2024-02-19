@@ -21,6 +21,7 @@ $email = 'lucaluma2004@gmail.com';
 try {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
+    $mail->SMTPDebug = 0;
     $mail->Host       = 'smtp.office365.com'; // Servidor SMTP de Outlook
     $mail->SMTPAuth   = true;
     $mail->Username   = 'tripadvisordaw@outlook.com'; // Tu dirección de correo de Outlook
@@ -38,7 +39,7 @@ try {
     <p>Bienvenido/a a <b>TripAdvisor</b>,  su codigo de verificación es: <b> $codigoAleatorio  </b></p>";
     $mail->AltBody = 'Confirma tu registro con el siguiente codigo';
     $mail->send();
-    echo 'Message has been sent';
+    echo $codigoAleatorio;
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
