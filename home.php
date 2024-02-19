@@ -67,6 +67,14 @@
             <button type="submit" id="login-buttons" class="button1">Enviar</button>
         </form>
     </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <label for="codigo">Introduzca el código que le ha llegado al correo:</label>
+            <br>
+            <input type="number" id="codigo">
+            <br>
+            <button type="submit" id="codigo" class="button1">Verificar</button>
+        </div>
 </body>
 </html>
 <script src="./js/validaciones.js"></script>

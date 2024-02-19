@@ -12,7 +12,7 @@ function registrarse() {
     var regPwd = document.getElementById('contra1R').value;
     var regUsr = document.getElementById('userR').value;
     var name = document.getElementById('nombreR').value;
-
+    var modal = document.getElementById('modal1');
     var formReg = new FormData();
     formReg.append('userR', regUsr)
     formReg.append('contra1R', regPwd)
@@ -28,6 +28,7 @@ function registrarse() {
             if (ajax.responseText == "ok") {
                 console.log('bien');
                 enviarCorreoDes(regMail);
+                modal.style.display = 'block';
 
             } else {
                 Swal.fire({
