@@ -97,6 +97,13 @@ input[type="text"],
     margin: 0;
 }
 
+.body2 {
+    background-image: url(../img/fondo.png);
+    height: 100vh;
+    margin: 0;
+    /* zoom: 0.8; */
+}
+
 img {
     width: 280px;
 }
@@ -129,4 +136,294 @@ img {
 .boton:hover {
     background-color: #14683b;
     border-color: #14683b;
+}
+
+.boton2 {
+    margin-left: 30px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: black;
+    transition: background-color 0.3s;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.boton2:hover {
+    color: grey;
+}
+
+.navbar {
+    padding: 20px;
+    background-color: white;
+    border-bottom: solid green 3px;
+    position: fixed;
+    width: 100%;
+}
+
+.cuerpo {
+    /*     position: fixed; */
+    display: flex;
+    /* Establece el contenedor como un flex container */
+    flex-direction: column;
+    /* Alinea el contenido en una columna */
+    justify-content: center;
+    /* Centra verticalmente el contenido */
+    align-items: center;
+    /* Centra horizontalmente el contenido */
+    background-color: white;
+    padding-top: 100px;
+    /* Asegúrate de que el div ocupe todo el espacio disponible en la pantalla */
+    width: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.filtros {
+    display: flex;
+    /* Establece el contenedor como un flex container */
+    justify-content: center;
+    /* Centra horizontalmente los elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+}
+
+.logo {
+    width: 200px;
+    margin-right: 100px;
+}
+
+.contenedor1 {
+    display: flex;
+    flex-basis: 100%;
+}
+
+.restaurante {
+    color: black;
+    padding: 10px;
+    width: 20%;
+    border-radius: 5px;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+}
+
+.imgR {
+    width: 200px;
+    border-radius: 5px;
+}
+
+.lupa {
+    padding: 2px;
+    background-color: white;
+    /* position: relative; */
+    display: inline-block;
+    border-radius: 20px;
+    /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.campo-busqueda {
+    background-color: transparent;
+    width: 600px;
+    /* Ancho del campo de búsqueda */
+    height: 50px;
+    padding: 10px;
+    /* Espaciado interno */
+    outline: none;
+    border: transparent;
+}
+
+.campo-busqueda:focus {
+    background-color: transparent;
+    /* Fondo transparente cuando está en foco */
+    outline: none;
+    /* Eliminar el contorno al hacer clic */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Sombra cuando está enfocado */
+}
+
+.campo-busqueda::placeholder {
+    color: #aaa;
+    /* Color del texto de marcador de posición */
+}
+
+.campo-busqueda:focus::placeholder {
+    color: transparent;
+    /* Ocultar el marcador de posición cuando está enfocado */
+}
+
+.botonL {
+    padding: 15px 20px;
+    /* Espaciado interno */
+    background-color: #55e480;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    border-radius: 20px;
+    /* Borde redondeado */
+    cursor: pointer;
+    margin-left: 10px;
+    /* Espacio entre el campo de búsqueda y el botón */
+}
+
+.botonL:hover {
+    background-color: #3e8c55;
+    /* Color de fondo del botón al pasar el ratón */
+}
+
+.mi-select {
+    margin-left: 10px;
+    padding: 10px;
+    /* Espaciado interno */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    border-radius: 5px;
+    /* Borde redondeado */
+    outline: none;
+    /* Eliminar el contorno de foco */
+    width: 200px;
+    /* Ancho del select */
+    cursor: pointer;
+    /* Cursor al pasar sobre el select */
+}
+
+.footer {
+    display: flex;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: antiquewhite;
+}
+
+.footer>div {
+    margin-right: 20px;
+    /* Espacio entre los bloques */
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.restauranteModal {
+    margin-top: 1%;
+    border-radius: 15px 15px 0 0;
+    border: solid 1px black;
+    overflow-y: auto;
+    padding: 30px;
+    position: fixed;
+    background-color: whitesmoke;
+    z-index: 1;
+    top: 0px;
+    left: 0px!important;
+    right: 0px!important;
+    height: 100%;
+    width: 97%;
+    /* display: none; */
+    padding-right: 0px!important;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+}
+
+.h1R {
+    font-size: 30px;
+    margin-right: 5%;
+}
+
+.columna {
+    background-color: white;
+    margin-right: 20px;
+    float: left;
+    width: 31%;
+    /* Ajusta el ancho según tus necesidades */
+    padding: 15px;
+    /* Espacio interno horizontal */
+    box-sizing: border-box;
+    /* Esto asegura que el padding no afecte al ancho */
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+    height: 60%;
+}
+
+.columna2 {
+    background-color: white;
+    float: left;
+    width: 31%;
+    /* Ajusta el ancho según tus necesidades */
+    padding: 0 15px;
+    /* Espacio interno horizontal */
+    box-sizing: border-box;
+    /* Esto asegura que el padding no afecte al ancho */
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+    height: 60%;
+}
+
+.tituloR {
+    padding: 1%;
+    padding-left: 2%;
+    background-color: white;
+    margin-right: 4.5%;
+}
+
+.cerrar {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    width: 20px;
+    border: solid 0px;
+    background-color: transparent;
+    float: right;
+    cursor: pointer;
+}
+
+.imgB {
+    width: 20px;
+}
+
+.portada {
+    width: 95.5%;
 }

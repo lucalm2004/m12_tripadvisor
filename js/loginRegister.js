@@ -88,7 +88,8 @@ function loguearse() {
         if (ajax.status == 200) {
             if (ajax.responseText == "ok") {
                 // funcionamiento de que ha ido bien
-                console.log('bien');
+                // console.log('bien');
+                window.location.href = './pagina.php';
             } else if (ajax.responseText == "error") {
                 Swal.fire({
                     position: 'top-end', // Cambia la posición a 'bottom-end' para mostrar la barra de tiempo abajo
