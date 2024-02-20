@@ -22,6 +22,8 @@ if (!isset($_SESSION['username'])){
         <button class="boton2">Restaurantes de la zona</button>
         <button class="boton2">Restaurantes mejores valorados</button>
         <button class="boton2">Opinion</button>
+        <a href="./inc/cerrarSesion.php" class="salir">Cerrar Sesión</a>
+
         <?php
         if ($_SESSION['rol']==1){
             echo "<a href=''><button class='boton2'>Administrar</button></a>";

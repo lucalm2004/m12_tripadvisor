@@ -153,6 +153,27 @@ img {
     border-color: transparent;
 }
 
+.salir {
+    float: right;
+    margin-top: 1.2%;
+    margin-right: 5%;
+    /* display: inline-block; */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: black;
+    transition: background-color 0.3s;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.salir:hover {
+    color: red;
+}
+
 .boton2:hover {
     color: grey;
 }
