@@ -30,6 +30,9 @@ function registrarse() {
                 enviarCorreoDes(regMail);
                 modal.style.display = 'block';
 
+            } else if (ajax.responseText == 'usuarioNoValidado') {
+                enviarCorreoDes(regMail);
+                modal.style.display = 'block';
             } else {
                 Swal.fire({
                     position: 'top-end', // Cambia la posición a 'bottom-end' para mostrar la barra de tiempo abajo
@@ -163,7 +166,7 @@ function enviarCorreoDes(email) {
                         // console.log(verification);
                         codigo = document.getElementById('codigo').value;
                         if (verification == codigo) {
-                            console.log('codigoVerificado')
+                            // console.log('codigoVerificado')
                             emails = email;
                             validarUser(emails);
                         } else {
@@ -223,6 +226,8 @@ function enviarCorreoDes(email) {
 
 function validarUser(email) {
     var modal = document.getElementById('modal1');
+    var divReg = document.getElementById('reg');
+    var divLog = document.getElementById('log');
     var ajaxCorreo = new XMLHttpRequest();
     ajaxCorreo.open('POST', './inc/validarUser.php');
     ajaxCorreo.onload = function() {
@@ -245,7 +250,8 @@ function validarUser(email) {
                 }
             });
             modal.style.display = 'none';
-
+            divLog.style.display = 'block';
+            divReg.style.display = 'none';
 
         } else {
             Swal.fire({

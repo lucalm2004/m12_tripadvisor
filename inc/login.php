@@ -11,7 +11,7 @@
         $user = $_POST['regMail'];
         $password = $_POST['regPwd'];
 
-        $query = "SELECT id_user, username, pwd FROM tbl_user WHERE username = :username";
+        $query = "SELECT id_user, username, pwd FROM tbl_user WHERE username = :username AND valid = 1";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':username', $user);
         $stmt->execute();

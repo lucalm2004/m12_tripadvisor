@@ -8,7 +8,23 @@
         $password = $_POST['contra1R'];
         $name = $_POST['name'];
 
-    
+     /* SEGUNDA CONSULTA */
+        // Verificar si el nombre de usuario ya está en uso
+        $query = "SELECT id_user FROM tbl_user WHERE (username = :username or mail = :email) AND valid = 0";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':username', $user);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        $resultadoPrimeraConsulta = $stmt->fetchAll();
+        $stmt->closeCursor();
+
+        if (!empty($resultadoPrimeraConsulta)) {
+        echo('usuarioNoValidado');            
+        $pdo = null;
+            exit();
+        }
+
 
         /* PRIMERA CONSULTA */
         // Verificar si el nombre de usuario ya está en uso
@@ -26,6 +42,8 @@
         $pdo = null;
             exit();
         }
+
+       
 
         // Hashear la contraseña antes de almacenarla en la base de datos con BCRYPT
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
