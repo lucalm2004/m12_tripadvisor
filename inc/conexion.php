@@ -3,7 +3,7 @@
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 // Parámetros de conexión a la base de datos.
-$dbserver = "mysql:dbname=db_tripadvisors;host:localhost";
+$dbserver = "mysql:dbname=db_tripadvisor;host:localhost";
 $dbusername = "root";
 $dbpassword = "";
 
