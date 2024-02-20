@@ -136,29 +136,137 @@ function enviarCorreoDes(email) {
     ajaxCorreo.open('POST', './inc/correoSolicitud.php');
     ajaxCorreo.onload = function() {
         if (ajaxCorreo.status == 200) {
-            try {
-                verification = ajaxCorreo.responseText;
-
-                codigoSubmit = document.getElementById('codigoSubmit');
-                codigoSubmit.addEventListener('click', function() {
-                    // console.log(verification);
-                    codigo = document.getElementById('codigo').value;
-                    if (verification == codigo) {
-                        console.log('codigoVerificado')
-                    } else {
-                        console.log('codigoMal')
-
+            if (ajax.responseText == 'mal') {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'No se a podido enviar el codigo de verificación.',
+                    showConfirmButton: false,
+                    toast: true,
+                    timer: 2000, // Cerrar después de 2 segundos
+                    customClass: {
+                        title: 'my-custom-title-class' // Clase personalizada para el título
+                    },
+                    onOpen: () => {
+                        // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                        const titleElement = document.querySelector('.my-custom-title-class');
+                        if (titleElement) {
+                            titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                        }
                     }
                 });
+            } else {
+                try {
+                    verification = ajaxCorreo.responseText;
 
-            } catch (error) {
-                console.log('Error al analizar la respuesta JSON:', error.message);
+                    codigoSubmit = document.getElementById('codigoSubmit');
+                    codigoSubmit.addEventListener('click', function() {
+                        // console.log(verification);
+                        codigo = document.getElementById('codigo').value;
+                        if (verification == codigo) {
+                            console.log('codigoVerificado')
+                            emails = email;
+                            validarUser(emails);
+                        } else {
+                            Swal.fire({
+                                position: 'top-end',
+                                title: 'No has puesto bien el codigo.',
+                                showConfirmButton: false,
+                                toast: true,
+                                timer: 2000, // Cerrar después de 2 segundos
+                                customClass: {
+                                    title: 'my-custom-title-class' // Clase personalizada para el título
+                                },
+                                onOpen: () => {
+                                    // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                                    const titleElement = document.querySelector('.my-custom-title-class');
+                                    if (titleElement) {
+                                        titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+                } catch (error) {
+                    console.log('Error al analizar la respuesta JSON:', error.message);
+                }
             }
+
         } else {
-            console.log('Error en la solicitud AJAX. Estado:', ajaxCorreo.status);
+            Swal.fire({
+                position: 'top-end',
+                title: 'No se a podido enviar el codigo de verificación.',
+                showConfirmButton: false,
+                toast: true,
+                timer: 2000, // Cerrar después de 2 segundos
+                customClass: {
+                    title: 'my-custom-title-class' // Clase personalizada para el título
+                },
+                onOpen: () => {
+                    // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                    const titleElement = document.querySelector('.my-custom-title-class');
+                    if (titleElement) {
+                        titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                    }
+                }
+            });
         }
     };
+    ajaxCorreo.onerror = function() {
+        console.log('Error en la solicitud AJAX');
+    };
+    var formReg = new FormData();
+    emails = email;
+    formReg.append("email", emails);
+    ajaxCorreo.send(formReg);
+}
 
+function validarUser(email) {
+    var modal = document.getElementById('modal1');
+    var ajaxCorreo = new XMLHttpRequest();
+    ajaxCorreo.open('POST', './inc/validarUser.php');
+    ajaxCorreo.onload = function() {
+        if (ajaxCorreo.status == 200) {
+            Swal.fire({
+                position: 'top-end',
+                title: 'Usuario verificado correctamente.',
+                showConfirmButton: false,
+                toast: true,
+                timer: 2000, // Cerrar después de 2 segundos
+                customClass: {
+                    title: 'my-custom-title-class' // Clase personalizada para el título
+                },
+                onOpen: () => {
+                    // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                    const titleElement = document.querySelector('.my-custom-title-class');
+                    if (titleElement) {
+                        titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                    }
+                }
+            });
+            modal.style.display = 'none';
+
+
+        } else {
+            Swal.fire({
+                position: 'top-end',
+                title: 'No se a podido verificar el usuario.',
+                showConfirmButton: false,
+                toast: true,
+                timer: 2000, // Cerrar después de 2 segundos
+                customClass: {
+                    title: 'my-custom-title-class' // Clase personalizada para el título
+                },
+                onOpen: () => {
+                    // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                    const titleElement = document.querySelector('.my-custom-title-class');
+                    if (titleElement) {
+                        titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                    }
+                }
+            });
+        }
+    };
     ajaxCorreo.onerror = function() {
         console.log('Error en la solicitud AJAX');
     };

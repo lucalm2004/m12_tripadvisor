@@ -14,9 +14,12 @@ function generarCodigo() {
 }
 
 $mail = new PHPMailer(true);
-    // $email = $_POST['email'];
+if(!isset($_POST['email'])){
+    echo "mal";
+}else{
+    $email = $_POST['email'];
 
-$email = 'lucaluma2004@gmail.com';
+// $email = 'lucaluma2004@gmail.com';
 
 try {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -45,4 +48,5 @@ try {
 }
 
 unset($mail->SMTPDebug);
+}
 ?>
