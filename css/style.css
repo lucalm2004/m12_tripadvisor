@@ -150,11 +150,32 @@ img {
 }
 
 .salir:hover {
-    color: red;
+    color: rgb(224, 5, 5);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 15px;
+}
+
+::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 90px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: grey;
+    border-radius: 30px;
 }
 
 .boton2:hover {
-    color: grey;
+    /* color: grey; */
+    color: #55e480;
 }
 
 .navbar {
@@ -450,10 +471,10 @@ ul {
 
 @media screen and (min-width: 1900px) {
     .boton2 {
-        font-size: 30px;
+        font-size: 26px;
     }
     .salir {
-        font-size: 30px;
+        font-size: 26px;
         margin-top: 1.5%;
     }
     .logo {
