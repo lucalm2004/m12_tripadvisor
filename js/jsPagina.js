@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         restauranteModal.classList.add('ocultar'); // Agregar clase para animar
         setTimeout(function() {
             restauranteModal.style.display = 'none'; // Ocultar el div después de la animación
-        }, 500); // Tiempo igual al de la transición en CSS
+        }, 1000); // Tiempo igual al de la transición en CSS
     });
 });
