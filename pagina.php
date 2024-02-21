@@ -14,6 +14,8 @@ if (!isset($_SESSION['username'])){
     <title>Tripadvisor: Web</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" id="favicon" href="https://static.tacdn.com/favicon.ico?v2" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </head>
 <body class="body2">
     <nav class="navbar">
@@ -83,8 +85,17 @@ if (!isset($_SESSION['username'])){
                 <label for="">Numero opiniones</label>
             </div>
             <br>
-            <img src="./img/banner.png" alt="banerR" class="portada">
-            <br>
+            <div>
+                <!-- <?php
+            //      if ($_SESSION['rol']==1){
+            // echo "<button id='fotoPrivadas' class='btnImagen'>Cambiar Imagen</button>";
+            //      }
+            //      ?> -->
+                 <button id='btnImagen' class='btnImagen'>Cambiar Imagen</button>
+            <img src="./img/id.jpg" id="imgActive" alt="banerR" class="portada">
+           
+            </div>
+             <br>
             <br>
             <div class="columna">
                 <h2 class="h2M">Puntuaciones y opiniones:</h2>
@@ -156,3 +167,4 @@ if (!isset($_SESSION['username'])){
 </body>
 </html>
 <script src="./js/jsPagina.js"></script>
+<script src="./js/imagen.js"></script>

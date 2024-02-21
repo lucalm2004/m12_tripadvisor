@@ -370,6 +370,23 @@ ul {
     border-radius: 5px;
 }
 
+.swal2-styled.swal2-confirm {
+    background-color: #28a745!important;
+}
+
+.btnImagen {
+    position: absolute;
+    top: 25.2%;
+    right: 4.5%;
+    z-index: 1;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 .restauranteModal {
     margin-top: 1%;
     border-radius: 15px 15px 0 0;
