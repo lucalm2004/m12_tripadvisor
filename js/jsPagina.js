@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Espera a que el DOM esté completamente cargado
     var botonCerrar = document.getElementById('cerrarR');
+    var restauranteModal = document.getElementById('restauranteModal');
 
-    // Agrega un event listener para el evento 'click' al botón
     botonCerrar.addEventListener('click', function() {
-        // Acción a realizar cuando se hace clic en el botón
-        document.getElementById('restauranteModal').style.display="none";
-        // Puedes agregar más acciones aquí, como ocultar una ventana modal, etc.
+        restauranteModal.classList.add('ocultar'); // Agregar clase para animar
+        setTimeout(function() {
+            restauranteModal.style.display = 'none'; // Ocultar el div después de la animación
+        }, 500); // Tiempo igual al de la transición en CSS
     });
 });
