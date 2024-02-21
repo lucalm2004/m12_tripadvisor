@@ -13,6 +13,7 @@ if (!isset($_SESSION['username'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tripadvisor: Web</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="icon" id="favicon" href="https://static.tacdn.com/favicon.ico?v2" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -75,6 +76,61 @@ if (!isset($_SESSION['username'])){
             <br>
         </div>
     </div>
+    <br>
+    <div class="fondoTar">
+        <?php
+            $sql = "SELECT * FROM tbl_restaurante 
+            INNER JOIN tbl_valoracion ON tbl_restaurante.valoracion = tbl_valoracion.id_valoracion 
+            INNER JOIN tbl_comida_restaurante ON tbl_comida_restaurante.id_resturante = tbl_restaurante.id_restaurante";
+
+        ?>
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+
+            <ul class="carousel">
+                <li class="card">
+                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
+                    <label>Fernando Alonso</label>
+                    <div class="valoraciones">
+                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
+                        <strong class="numeroR">50</strong>
+                    </div>
+                    <span>Precio medio de </span>
+                </li>
+
+                <li class="card">
+                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
+                    <label>Fernando Alonso</label>
+                    <div class="valoraciones">
+                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
+                        <strong class="numeroR">50</strong>
+                    </div>
+                    <span>Precio medio de </span>
+                </li>
+
+                <li class="card">
+                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
+                    <label>Fernando Alonso</label>
+                    <div class="valoraciones">
+                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
+                        <strong class="numeroR">50</strong>
+                    </div>
+                    <span>Precio medio de </span>
+                </li>
+
+                <li class="card">
+                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
+                    <label>Fernando Alonso</label>
+                    <div class="valoraciones">
+                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
+                        <strong class="numeroR">50</strong>
+                    </div>
+                    <span>Precio medio de </span>
+                </li>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
     <div>
         <div class="restauranteModal" id="restauranteModal">
             <button type="button" class="cerrar" id="cerrarR"><img src="./img/cerrar.png" class="imgB"></button>
@@ -124,65 +180,6 @@ if (!isset($_SESSION['username'])){
             <!-- bucle con las opiniones -->
         </div>
     </div>
-    <div>
-        <?php
-            $sql = "SELECT * FROM tbl_restaurante 
-            INNER JOIN tbl_valoracion ON tbl_restaurante.valoracion = tbl_valoracion.id_valoracion 
-            INNER JOIN tbl_comida_restaurante ON tbl_comida_restaurante.id_resturante = tbl_restaurante.id_restaurante";
-        ?>
-        <div class="wrapper">
-        <i id="left" class="fa-solid fa-angle-left"></i>
-
-        <ul class="carousel">
-            <li class="card">
-                <div class="img"><img src="../img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                <h2>Fernando Alonso</h2>
-                <span>Piloto de Aston Martin </span>
-                <img src="../img/estrella_valoracion_5.png" class="estrella_foto" alt="">
-               
-            </li>
-
-
-            <li class="card">
-                <div class="img"><img src="../img/lewis_hamilton.jpg" alt="img" draggable="false"></div>
-                <h2>Lewis Hamilton</h2>
-                <span>Piloto de Mercedes </span>
-                <img src="../img/estrella_valoracion_1.png" class="estrella_foto" alt="">
-            </li>
-
-
-
-            <li class="card">
-                <div class="img"><img src="../img/max_verstappen.jpg" alt="img" draggable="false"></div>
-                <h2>Max Verstappen</h2>
-                <span>Piloto de Red Bull </span>
-                <img src="../img/estrella_valoracion_4.png" class="estrella_foto" alt="">
-            </li>
-
-
-
-            <li class="card">
-                <div class="img"><img src="../img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                <h2>Fernando Alonso</h2>
-                <span>Piloto de Aston Martin </span>
-            </li>
-
-
-            <li class="card">
-                <div class="img"><img src="../img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                <h2>Fernando Alonso</h2>
-                <span>Piloto de Aston Martin </span>
-            </li>
-
-            <li class="card">
-                <div class="img"><img src="../img/tripadvisor.png" alt="img" draggable="false"></div>
-                <h2>Fernando Alonso</h2>
-                <span>Piloto de Aston Martin </span>
-            </li>
-        </ul>
-        <i id="right" class="fa-solid fa-angle-right"></i>
-    </div>
-    </div>
     <footer class="footer">
         <div>
             <label for="" class="tn">Acerca de TripAdvisor</label>
@@ -220,3 +217,4 @@ if (!isset($_SESSION['username'])){
 </html>
 <script src="./js/jsPagina.js"></script>
 <script src="./js/imagen.js"></script>
+<script src="./js/tarjetas.js"></script>
