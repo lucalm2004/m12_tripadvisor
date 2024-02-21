@@ -429,49 +429,54 @@ ul {
 }
 
 #restauranteModal {
-    transition: all 1s ease; /* Transición para suavizar la animación */
+    transition: all 1s ease;
+    /* Transición para suavizar la animación */
 }
+
 .ocultar {
-    transform: translateY(100%); /* Mover el div hacia abajo */
+    transform: translateY(100%);
+    /* Mover el div hacia abajo */
 }
+
 @media screen and (min-width: 1600px) {
-    .boton2{
+    .boton2 {
         font-size: 25px;
     }
-    .salir{
+    .salir {
         font-size: 25px;
         margin-top: 1%;
     }
 }
+
 @media screen and (min-width: 1900px) {
-    .boton2{
+    .boton2 {
         font-size: 30px;
     }
-    .salir{
+    .salir {
         font-size: 30px;
         margin-top: 1.5%;
     }
-    .logo{
+    .logo {
         width: 280px;
     }
-    li{
+    li {
         font-size: 25px;
     }
-    .tn{
+    .tn {
         font-size: 25px;
     }
-    h1{
+    h1 {
         font-size: 60px;
     }
-    .h1R{
+    .h1R {
         font-size: 45px;
     }
-    .campo-busqueda{
+    .campo-busqueda {
         width: 1000px;
         height: 70px;
         font-size: 25px;
     }
-    .botonL{
+    .botonL {
         font-size: 25px;
         margin-right: 4px;
     }
@@ -479,32 +484,31 @@ ul {
         margin-left: 10px;
         padding: 15px;
         font-size: 25px;
-        width: 250px;
+        width: 300px;
     }
-    .lupa{
+    .lupa {
         margin-top: 30px;
         margin-bottom: 30px;
     }
-    .h2M{
+    .h2M {
         font-size: 40px;
     }
     form {
         padding: 40px;
         width: 400px;
     }
-    .labelL{
+    .labelL {
         font-size: 25px;
     }
     input[type="text"],
     [type="password"] {
         height: 40px;
     }
-
     .button1 {
         height: 40px;
         font-size: 16px;
     }
-    .boton{
+    .boton {
         font-size: 25px;
     }
 }
