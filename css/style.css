@@ -155,7 +155,7 @@ img {
 
 .salir {
     float: right;
-    margin-top: 1.2%;
+    margin-top: 2%;
     margin-right: 5%;
     /* display: inline-block; */
     font-size: 18px;
@@ -218,7 +218,7 @@ h1 {
 
 .logo {
     width: 200px;
-    margin-right: 100px;
+    margin-right: 20px;
 }
 
 .contenedor1 {
@@ -447,4 +447,11 @@ ul {
 
 .portada {
     width: 95.5%;
+}
+
+#restauranteModal {
+    transition: all 0.5s ease; /* Transición para suavizar la animación */
+}
+.ocultar {
+    transform: translateY(100%); /* Mover el div hacia abajo */
 }
