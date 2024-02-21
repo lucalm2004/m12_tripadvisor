@@ -19,11 +19,9 @@ if (!isset($_SESSION['username'])){
     <nav class="navbar">
         <img src="./img/tripadvisor.svg" class="logo">
         <button class="boton2">Inicio</button>
-        <button class="boton2">Restaurantes de la zona</button>
         <button class="boton2">Restaurantes mejores valorados</button>
         <button class="boton2">Opinion</button>
         <a href="./inc/cerrarSesion.php" class="salir">Cerrar Sesión</a>
-
         <?php
         if ($_SESSION['rol']==1){
             echo "<a href=''><button class='boton2'>Administrar</button></a>";
@@ -76,11 +74,6 @@ if (!isset($_SESSION['username'])){
         </div>
     </div>
     <div>
-        <?php
-            $sql = "SELECT * FROM tbl_restaurante 
-            INNER JOIN tbl_valoracion ON tbl_restaurante.valoracion = tbl_valoracion.id_valoracion 
-            INNER JOIN tbl_comida_restaurante ON tbl_comida_restaurante.id_resturante = tbl_restaurante.id_restaurante";
-        ?>
         <div class="restauranteModal" id="restauranteModal">
             <button type="button" class="cerrar" id="cerrarR"><img src="./img/cerrar.png" class="imgB"></button>
             <br>
@@ -121,6 +114,13 @@ if (!isset($_SESSION['username'])){
         <div>
             <!-- bucle con las opiniones -->
         </div>
+    </div>
+    <div>
+        <?php
+            $sql = "SELECT * FROM tbl_restaurante 
+            INNER JOIN tbl_valoracion ON tbl_restaurante.valoracion = tbl_valoracion.id_valoracion 
+            INNER JOIN tbl_comida_restaurante ON tbl_comida_restaurante.id_resturante = tbl_restaurante.id_restaurante";
+        ?>
     </div>
     <footer class="footer">
         <div>
