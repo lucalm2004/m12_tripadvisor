@@ -21,12 +21,12 @@
             <img src="./img/tripadvisor.svg">
             <br>
             <br>
-            <label for="">Usuario</label>
+            <label for="" class="labelL">Usuario</label>
             <br>
             <input type="text" id="userL" maxlength="50">
             <br>
             <br>
-            <label for="">Contraseña</label>
+            <label for="" class="labelL">Contraseña</label>
             <br>
             <input type="password" id="pwdL" maxlength="12">
             <br>
@@ -39,27 +39,27 @@
             <img src="./img/tripadvisor.svg">
             <br>
             <br>
-            <label for="">Usuario</label>
+            <label for="" class="labelL">Usuario</label>
             <br>
             <input type="text" id="userR" maxlength="50">
             <br>
             <br>
-            <label for="">Nombre Completo</label>
+            <label for="" class="labelL">Nombre Completo</label>
             <br>
             <input type="text" id="nombreR" maxlength="100">
             <br>
             <br>
-            <label for="">Correo Electrónico</label>
+            <label for="" class="labelL">Correo Electrónico</label>
             <br>
             <input type="text" id="corrR" maxlength="100">
             <br>
             <br>
-            <label for="">Contraseña</label>
+            <label for="" class="labelL">Contraseña</label>
             <br>
             <input type="password" id="contra1R" maxlength="12">
             <br>
             <br>
-            <label for="">Confirmar contraseña</label>
+            <label for="" class="labelL">Confirmar contraseña</label>
             <br>
             <input type="password" id="contra2R" maxlength="12">
             <br>
