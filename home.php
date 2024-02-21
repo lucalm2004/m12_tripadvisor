@@ -6,10 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-<style>
-    
-</style>
 </head>
 <body class="body1">
     <div class="botonesTop">
