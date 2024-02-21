@@ -87,12 +87,12 @@ if (!isset($_SESSION['username'])){
             <br>
             <br>
             <div class="columna">
-                <h2>Puntuaciones y opiniones:</h2>
+                <h2 class="h2M">Puntuaciones y opiniones:</h2>
                 <label for="">media de puntuacion</label>
                 <img src="" alt="Imagen de puntuaciones y opiniones">
             </div>
             <div class="columna">
-                <h2>Detalles:</h2>
+                <h2 class="h2M">Detalles:</h2>
                 <label for="">Rango de precios</label>
                 <br>
                 <br>
@@ -105,9 +105,7 @@ if (!isset($_SESSION['username'])){
                 <label for="">tipos</label>
             </div>
             <div class="columna2">
-                <h2>Ubicación y contacto:</h2>
-                <br>
-                <br>
+                <h2 class="h2M">Ubicación y contacto:</h2>
                 <label for="">Calle</label>
             </div>
         </div>
@@ -124,7 +122,7 @@ if (!isset($_SESSION['username'])){
     </div>
     <footer class="footer">
         <div>
-            <label for="">Acerca de TripAdvisor</label>
+            <label for="" class="tn">Acerca de TripAdvisor</label>
             <ul>
                 <li>Solo colaboramos con restaurantes y bares</li>
                 <li>Cocina auténtica y deliciosa</li>
@@ -135,7 +133,7 @@ if (!isset($_SESSION['username'])){
             </ul>
         </div>
         <div>
-            <label>Nuestro Compromiso</label>
+            <label class="tn">Nuestro Compromiso</label>
             <ul>
                 <li>Garantizamos la transparencia y veracidad en todas nuestras reseñas</li>
                 <li>Valoramos y respetamos la opinión de cada usuario</li>
@@ -146,7 +144,7 @@ if (!isset($_SESSION['username'])){
             </ul>
         </div>
         <div>
-            <label for="">Nuestras redes sociales</label>
+            <label for="" class="tn">Nuestras redes sociales</label>
             <ul>
                 <li><a href="">Facebook</a></li>
                 <li><a href="">Instagram</a></li>
