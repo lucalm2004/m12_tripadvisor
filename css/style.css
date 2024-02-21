@@ -429,7 +429,7 @@ ul {
 }
 
 #restauranteModal {
-    transition: all 0.5s ease; /* Transición para suavizar la animación */
+    transition: all 1s ease; /* Transición para suavizar la animación */
 }
 .ocultar {
     transform: translateY(100%); /* Mover el div hacia abajo */
