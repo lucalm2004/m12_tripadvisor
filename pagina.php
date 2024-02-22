@@ -1,13 +1,14 @@
 <?php
 session_start();
 require_once("./inc/conexion.php");
-if (!isset($_SESSION['username'])){
+if (!isset($_SESSION['username'])) {
     header('Location: ./home.php');
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@ if (!isset($_SESSION['username'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
+
 <body class="body2">
     <nav class="navbar">
         <img src="./img/tripadvisor.svg" class="logo">
@@ -26,7 +28,7 @@ if (!isset($_SESSION['username'])){
         <button class="boton2">Opinión</button>
         <a href="./inc/cerrarSesion.php" class="salir">Cerrar Sesión</a>
         <?php
-        if ($_SESSION['rol']==1){
+        if ($_SESSION['rol'] == 1) {
             echo "<a href=''><button class='boton2'>Administrar</button></a>";
         }
 
@@ -43,7 +45,7 @@ if (!isset($_SESSION['username'])){
                 <option value="4">4 estrellas</option>
                 <option value="5">5 estrellas</option>
 
-            </select>  
+            </select>
             <select name="" id="precio" class="mi-select">
                 <option value="">Según el precio medio</option>
                 <option value="1">Menos de 10€</option>
@@ -54,16 +56,16 @@ if (!isset($_SESSION['username'])){
                 <option value="6">Mas de 50€</option>
             </select>
             <select name="" id="" class="mi-select">
-            <option value="">tipo de comida</option>
-            <?php
+                <option value="">tipo de comida</option>
+                <?php
                 $sql = "SELECT * FROM tipo_comida";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $tipos_comida = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach($tipos_comida as $tipo) {
+                foreach ($tipos_comida as $tipo) {
                     echo "<option value='" . $tipo['id_comida'] . "'>" . $tipo['nombre_comida'] . "</option>";
                 }
-            ?>
+                ?>
             </select>
         </div>
         <br>
@@ -71,8 +73,8 @@ if (!isset($_SESSION['username'])){
             <div class="lupa">
                 <input type="search" name="" id="campo-busqueda" class="campo-busqueda" placeholder="Buscar...">
                 <button class="botonL" id="buscarR">Buscar</button>
-            </div>  
-            <br>  
+            </div>
+            <br>
             <br>
         </div>
     </div>
@@ -81,7 +83,7 @@ if (!isset($_SESSION['username'])){
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
-            <?php
+                <?php
                 // Consulta SQL corregida
                 $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante";
 
@@ -128,8 +130,8 @@ if (!isset($_SESSION['username'])){
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-                        
-                        echo "<strong class='numeroR'>" .  round($promedio * 10)/10 . "</strong>";
+
+                        echo "<strong class='numeroR'>" .  round($promedio * 10) / 10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
                         echo "</li>";
@@ -139,15 +141,24 @@ if (!isset($_SESSION['username'])){
                             <h1 style='color: green;'>0 resultados</h1>
                         </div>";
                 }
-            ?>
+                ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
     <div>
         <div class="anuncio">
-            <img src="./img/res1.jpg"  class="rotada">
-            <h2 class="h1O">El mejor restaurante segun nuestros usuarios</h2>
+            <?php
+            $sql = "SELECT imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio ASC LIMIT 1";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($resultado as $row) {
+                echo "<img src='./img/". $row['imagen_res']."' class='rotada'>";
+            }
+            ?>
+            
+            <h2 class="h1O">El restaurante más asequible según nuestros usuarios.</h2>
         </div>
     </div>
     <div>
@@ -160,7 +171,7 @@ if (!isset($_SESSION['username'])){
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
-            <?php
+                <?php
                 // Consulta SQL corregida
                 $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio DESC LIMIT 12";
 
@@ -207,7 +218,7 @@ if (!isset($_SESSION['username'])){
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-                        echo "<strong class='numeroR'>" .  round($promedio * 10)/10 . "</strong>";
+                        echo "<strong class='numeroR'>" .  round($promedio * 10) / 10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
                         echo "</li>";
@@ -217,7 +228,7 @@ if (!isset($_SESSION['username'])){
                             <h1 style='color: green;'>0 resultados</h1>
                         </div>";
                 }
-            ?>
+                ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
@@ -232,7 +243,7 @@ if (!isset($_SESSION['username'])){
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
-            <?php
+                <?php
                 // Consulta SQL corregida
                 $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio LIMIT 12";
 
@@ -279,7 +290,7 @@ if (!isset($_SESSION['username'])){
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-                        echo "<strong class='numeroR'>" .  round($promedio * 10)/10 . "</strong>";
+                        echo "<strong class='numeroR'>" .  round($promedio * 10) / 10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
                         echo "</li>";
@@ -289,7 +300,7 @@ if (!isset($_SESSION['username'])){
                             <h1 style='color: green;'>0 resultados</h1>
                         </div>";
                 }
-            ?>
+                ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
@@ -307,15 +318,16 @@ if (!isset($_SESSION['username'])){
             <br>
             <div>
                 <!-- <?php
-            //      if ($_SESSION['rol']==1){
-            // echo "<button id='fotoPrivadas' class='btnImagen'>Cambiar Imagen</button>";
-            //      }
-            //      ?> -->
-                 <button id='btnImagen' class='btnImagen'>Cambiar Imagen</button>
-            <img src="./img/id.jpg" id="imgActive" alt="banerR" class="portada">
-           
+                        //      if ($_SESSION['rol']==1){
+                        // echo "<button id='fotoPrivadas' class='btnImagen'>Cambiar Imagen</button>";
+                        //      }
+                        //      
+                        ?> -->
+                <button id='btnImagen' class='btnImagen'>Cambiar Imagen</button>
+                <img src="./img/id.jpg" id="imgActive" alt="banerR" class="portada">
+
             </div>
-             <br>
+            <br>
             <br>
             <div class="columna">
                 <h2 class="h2M">Puntuaciones y opiniones:</h2>
@@ -372,9 +384,10 @@ if (!isset($_SESSION['username'])){
                 <li><a href="">Twitter</a></li>
                 <li><a href="">YouTube</a></li>
             </ul>
-        </div>     
+        </div>
     </footer>
 </body>
+
 </html>
 <script src="./js/jsPagina.js"></script>
 <script src="./js/imagen.js"></script>
