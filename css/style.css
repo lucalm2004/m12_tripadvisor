@@ -178,13 +178,34 @@ img {
     color: #55e480;
 }
 
+.restauranteModal {
+    margin-top: 1%;
+    border-radius: 15px 15px 0 0;
+    border: solid 1px black;
+    overflow-y: auto;
+    padding: 30px;
+    position: fixed;
+    background-color: #edeaea;
+    z-index: 1;
+    top: 0px;
+    left: 0px!important;
+    right: 0px!important;
+    height: 100%;
+    width: 97%;
+    display: none;
+    padding-right: 0px!important;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+    z-index: 4;
+}
+
 .navbar {
     padding: 20px;
     background-color: white;
     border-bottom: solid green 3px;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
 }
 
 .cuerpo {
@@ -395,26 +416,6 @@ ul {
     font-size: 14px;
 }
 
-.restauranteModal {
-    margin-top: 1%;
-    border-radius: 15px 15px 0 0;
-    border: solid 1px black;
-    overflow-y: auto;
-    padding: 30px;
-    position: fixed;
-    background-color: #edeaea;
-    z-index: 1;
-    top: 0px;
-    left: 0px!important;
-    right: 0px!important;
-    height: 100%;
-    width: 97%;
-    display: none;
-    padding-right: 0px!important;
-    margin-right: 0.5%;
-    margin-left: 0.5%;
-}
-
 .h1R {
     font-size: 30px;
     margin-right: 5%;
@@ -474,6 +475,10 @@ ul {
     width: 95.5%;
 }
 
+.subT{
+    margin-left: 6%;
+}
+
 #restauranteModal {
     transition: all 1s ease;
     /* Transición para suavizar la animación */
@@ -497,7 +502,8 @@ ul {
 }
 
 .valoraciones{
-    display: flex; align-items:center;
+    display: flex; 
+    align-items:center;
     gap: 10%;
 }
 
@@ -513,17 +519,17 @@ ul {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.23);
-    transform: translateY(-50%);
+    transform: translateY(-120%);
     transition: transform 0.1s linear;
 }
 .wrapper i:active{
     transform: translateY(-50%) scale(0.85);
 }
 .wrapper i:first-child{
-    left: 0px;
+    left: -20px;
 }
 .wrapper i:last-child{
-    right: 22px;
+    right: -20px;
 }
 .wrapper .carousel{
     display: grid;
@@ -603,10 +609,36 @@ ul {
 }
 
 .fondoTar{
+    height: 360px;
     padding-left: 6%;
     background-color: white;
     border-top: solid green 3px;
-    border-bottom: solid green 3px;
+}
+
+.rotada{
+    transform: rotate(-4deg);
+    width: 160px;
+    margin-right: 4%;
+    border-radius: 5px;
+}
+
+.anuncio{
+    display: flex;
+    background-color: antiquewhite;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 6%;
+    align-items: center;
+    height: 100%;
+    border-radius: 5px;
+    border: solid black;
+    width: 1076px;
+}
+
+.h1O{
+    justify-content: center;
+    font-size: 30px;
 }
 
 .star:hover,

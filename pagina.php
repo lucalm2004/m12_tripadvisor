@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])){
         <img src="./img/tripadvisor.svg" class="logo">
         <button class="boton2">Inicio</button>
         <button class="boton2">Mejores valorados</button>
-        <button class="boton2">Opinion</button>
+        <button class="boton2">Opinión</button>
         <a href="./inc/cerrarSesion.php" class="salir">Cerrar Sesión</a>
         <?php
         if ($_SESSION['rol']==1){
@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])){
                 <option value="5">5 estrellas</option>
 
             </select>  
-            <select name="" id="" class="mi-select">
+            <select name="" id="precio" class="mi-select">
                 <option value="">Según el precio medio</option>
                 <option value="1">Menos de 10€</option>
                 <option value="2">De 10€ a 20€</option>
@@ -69,68 +69,231 @@ if (!isset($_SESSION['username'])){
         <br>
         <div>
             <div class="lupa">
-                <input type="search" name="" id="" class="campo-busqueda" placeholder="Buscar...">
-                <button class="botonL">Buscar</button>
+                <input type="search" name="" id="campo-busqueda" class="campo-busqueda" placeholder="Buscar...">
+                <button class="botonL" id="buscarR">Buscar</button>
             </div>  
             <br>  
             <br>
         </div>
     </div>
     <br>
-    <div class="fondoTar">
-        <?php
-            $sql = "SELECT * FROM tbl_restaurante 
-            INNER JOIN tbl_valoracion ON tbl_restaurante.valoracion = tbl_valoracion.id_valoracion 
-            INNER JOIN tbl_comida_restaurante ON tbl_comida_restaurante.id_resturante = tbl_restaurante.id_restaurante";
-
-        ?>
+    <div class="fondoTar" id="carR">
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left"></i>
-
             <ul class="carousel">
-                <li class="card">
-                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                    <label>Fernando Alonso</label>
-                    <div class="valoraciones">
-                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
-                        <strong class="numeroR">50</strong>
-                    </div>
-                    <span>Precio medio de </span>
-                </li>
+            <?php
+                // Consulta SQL corregida
+                $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante";
 
-                <li class="card">
-                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                    <label>Fernando Alonso</label>
-                    <div class="valoraciones">
-                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
-                        <strong class="numeroR">50</strong>
-                    </div>
-                    <span>Precio medio de </span>
-                </li>
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                <li class="card">
-                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                    <label>Fernando Alonso</label>
-                    <div class="valoraciones">
-                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
-                        <strong class="numeroR">50</strong>
-                    </div>
-                    <span>Precio medio de </span>
-                </li>
-
-                <li class="card">
-                    <div class="img"><img src="./img/fernando_alonso.jpg" alt="img" draggable="false"></div>
-                    <label>Fernando Alonso</label>
-                    <div class="valoraciones">
-                        <img src="./img/estrella_valoracion_5.png" class="estrella_foto" alt="">
-                        <strong class="numeroR">50</strong>
-                    </div>
-                    <span>Precio medio de </span>
-                </li>
+                if ($stmt->rowCount() > 0) {
+                    foreach ($resultado as $row) {
+                        $sql2 = "SELECT COUNT(valoracion) AS cantidad, SUM(valoracion) AS suma FROM tbl_valoracion WHERE restaurante = " . $row['id_restaurante'];
+                        $stmt2 = $pdo->query($sql2);
+                        $result2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+                        if ($result2['cantidad'] != 0) {
+                            $promedio = $result2['suma'] / $result2['cantidad'];
+                        } else {
+                            $promedio = 'sin valoraciones';
+                        }
+                        echo "<li class='card'>";
+                        echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
+                        echo "<label>" . $row['nombre_restuarante'] . "</label>";
+                        echo "<div class='valoraciones'>";
+                        if (is_numeric($promedio)) {
+                            if ($promedio == 5) {
+                                echo "<img src='./img/estrella_valoracion_5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 4.5 and $promedio < 5) {
+                                echo "<img src='./img/estrella_valoracion_4,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 4 and $promedio < 4.5) {
+                                echo "<img src='./img/estrella_valoracion_4.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 3.5 and $promedio < 4) {
+                                echo "<img src='./img/estrella_valoracion_3,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 3 and $promedio < 3.5) {
+                                echo "<img src='./img/estrella_valoracion_3.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 2.5 and $promedio < 3) {
+                                echo "<img src='./img/estrella_valoracion_2,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 2 and $promedio < 2.5) {
+                                echo "<img src='./img/estrella_valoracion_2.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 1.5 and $promedio < 2) {
+                                echo "<img src='./img/estrella_valoracion_1,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 1 and $promedio < 1.5) {
+                                echo "<img src='./img/estrella_valoracion_1.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 0.1 and $promedio < 1) {
+                                echo "<img src='./img/estrella_valoracion_0,5.png' class='estrella_foto'>";
+                            }
+                        } else {
+                            echo "<span style='font-size: 16px;'>opiniones</span>";
+                        }
+                        echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+                        echo "</div>";
+                        echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
+                        echo "</li>";
+                    }
+                } else {
+                    echo "<div style='display: flex; justify-content: center; align-items: center;'>
+                            <h1 style='color: green;'>0 resultados</h1>
+                        </div>";
+                }
+            ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
+    <div>
+        <div class="anuncio">
+            <img src="./img/res1.jpg"  class="rotada">
+            <h2 class="h1O">El mejor restaurante segun nuestros usuarios</h2>
+        </div>
+    </div>
+    <div>
+        <br>
+        <br>
+        <br>
+        <h2 class="subT">Los Mas caros</h2>
+    </div>
+    <div class="fondoTar">
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+            <?php
+                // Consulta SQL corregida
+                $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio DESC LIMIT 12";
+
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if ($stmt->rowCount() > 0) {
+                    foreach ($resultado as $row) {
+                        $sql2 = "SELECT COUNT(valoracion) AS cantidad, SUM(valoracion) AS suma FROM tbl_valoracion WHERE restaurante = " . $row['id_restaurante'];
+                        $stmt2 = $pdo->query($sql2);
+                        $result2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+                        if ($result2['cantidad'] != 0) {
+                            $promedio = $result2['suma'] / $result2['cantidad'];
+                        } else {
+                            $promedio = 'sin valoraciones';
+                        }
+                        echo "<li class='card'>";
+                        echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
+                        echo "<label>" . $row['nombre_restuarante'] . "</label>";
+                        echo "<div class='valoraciones'>";
+                        if (is_numeric($promedio)) {
+                            if ($promedio == 5) {
+                                echo "<img src='./img/estrella_valoracion_5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 4.5 and $promedio < 5) {
+                                echo "<img src='./img/estrella_valoracion_4,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 4 and $promedio < 4.5) {
+                                echo "<img src='./img/estrella_valoracion_4.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 3.5 and $promedio < 4) {
+                                echo "<img src='./img/estrella_valoracion_3,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 3 and $promedio < 3.5) {
+                                echo "<img src='./img/estrella_valoracion_3.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 2.5 and $promedio < 3) {
+                                echo "<img src='./img/estrella_valoracion_2,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 2 and $promedio < 2.5) {
+                                echo "<img src='./img/estrella_valoracion_2.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 1.5 and $promedio < 2) {
+                                echo "<img src='./img/estrella_valoracion_1,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 1 and $promedio < 1.5) {
+                                echo "<img src='./img/estrella_valoracion_1.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 0.1 and $promedio < 1) {
+                                echo "<img src='./img/estrella_valoracion_0,5.png' class='estrella_foto'>";
+                            }
+                        } else {
+                            echo "<span style='font-size: 16px;'>opiniones</span>";
+                        }
+                        echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+                        echo "</div>";
+                        echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
+                        echo "</li>";
+                    }
+                } else {
+                    echo "<div style='display: flex; justify-content: center; align-items: center;'>
+                            <h1 style='color: green;'>0 resultados</h1>
+                        </div>";
+                }
+            ?>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+    <div>
+        <br>
+        <br>
+        <br>
+        <h2 class="subT">Los Mas baratos</h2>
+    </div>
+    <div class="fondoTar">
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+            <?php
+                // Consulta SQL corregida
+                $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio LIMIT 12";
+
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if ($stmt->rowCount() > 0) {
+                    foreach ($resultado as $row) {
+                        $sql2 = "SELECT COUNT(valoracion) AS cantidad, SUM(valoracion) AS suma FROM tbl_valoracion WHERE restaurante = " . $row['id_restaurante'];
+                        $stmt2 = $pdo->query($sql2);
+                        $result2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+                        if ($result2['cantidad'] != 0) {
+                            $promedio = $result2['suma'] / $result2['cantidad'];
+                        } else {
+                            $promedio = 'sin valoraciones';
+                        }
+                        echo "<li class='card'>";
+                        echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
+                        echo "<label>" . $row['nombre_restuarante'] . "</label>";
+                        echo "<div class='valoraciones'>";
+                        if (is_numeric($promedio)) {
+                            if ($promedio == 5) {
+                                echo "<img src='./img/estrella_valoracion_5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 4.5 and $promedio < 5) {
+                                echo "<img src='./img/estrella_valoracion_4,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 4 and $promedio < 4.5) {
+                                echo "<img src='./img/estrella_valoracion_4.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 3.5 and $promedio < 4) {
+                                echo "<img src='./img/estrella_valoracion_3,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 3 and $promedio < 3.5) {
+                                echo "<img src='./img/estrella_valoracion_3.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 2.5 and $promedio < 3) {
+                                echo "<img src='./img/estrella_valoracion_2,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 2 and $promedio < 2.5) {
+                                echo "<img src='./img/estrella_valoracion_2.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 1.5 and $promedio < 2) {
+                                echo "<img src='./img/estrella_valoracion_1,5.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 1 and $promedio < 1.5) {
+                                echo "<img src='./img/estrella_valoracion_1.png' class='estrella_foto'>";
+                            } elseif ($promedio >= 0.1 and $promedio < 1) {
+                                echo "<img src='./img/estrella_valoracion_0,5.png' class='estrella_foto'>";
+                            }
+                        } else {
+                            echo "<span style='font-size: 16px;'>opiniones</span>";
+                        }
+                        echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+                        echo "</div>";
+                        echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
+                        echo "</li>";
+                    }
+                } else {
+                    echo "<div style='display: flex; justify-content: center; align-items: center;'>
+                            <h1 style='color: green;'>0 resultados</h1>
+                        </div>";
+                }
+            ?>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+
     <div>
         <div class="restauranteModal" id="restauranteModal">
             <button type="button" class="cerrar" id="cerrarR"><img src="./img/cerrar.png" class="imgB"></button>
@@ -176,9 +339,6 @@ if (!isset($_SESSION['username'])){
                 <label for="">Calle</label>
             </div>
         </div>
-        <div>
-            <!-- bucle con las opiniones -->
-        </div>
     </div>
     <footer class="footer">
         <div>
@@ -218,3 +378,4 @@ if (!isset($_SESSION['username'])){
 <script src="./js/jsPagina.js"></script>
 <script src="./js/imagen.js"></script>
 <script src="./js/tarjetas.js"></script>
+<script src="./js/buscarR.js"></script>

@@ -117,40 +117,153 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Americana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Caribeña');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Mediterránea');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Libanesa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Peruana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Argentina');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Chilena');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Colombiana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Venezolana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Ecuatoriana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Árabe');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Alemana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Rusa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Nórdica');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Polaca');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Hawaiana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Sudafricana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Marroquí');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Turca');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Escandinava');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Irlandesa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Australiana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Austriaca');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Belga');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Suiza');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Portuguesa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Húngara');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Sueca');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Danesa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Finlandesa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Italiana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Mexicana');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Española');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('China');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Japonesa');
-INSERT INTO `db_tripadvisor`.`tipo_comida` (`nombre_comida`) VALUES ('Francesa');
+INSERT INTO `tipo_comida` (`id_comida`, `nombre_comida`) VALUES
+(1, 'Americana'),
+(2, 'Caribeña'),
+(3, 'Mediterránea'),
+(4, 'Libanesa'),
+(5, 'Peruana'),
+(6, 'Argentina'),
+(7, 'Chilena'),
+(8, 'Colombiana'),
+(9, 'Venezolana'),
+(10, 'Ecuatoriana'),
+(11, 'Árabe'),
+(12, 'Alemana'),
+(13, 'Rusa'),
+(14, 'Nórdica'),
+(15, 'Polaca'),
+(16, 'Hawaiana'),
+(17, 'Sudafricana'),
+(18, 'Marroquí'),
+(19, 'Turca'),
+(20, 'Escandinava'),
+(21, 'Irlandesa'),
+(22, 'Australiana'),
+(23, 'Austriaca'),
+(24, 'Belga'),
+(25, 'Suiza'),
+(26, 'Portuguesa'),
+(27, 'Húngara'),
+(28, 'Sueca'),
+(29, 'Danesa'),
+(30, 'Finlandesa'),
+(31, 'Italiana'),
+(32, 'Mexicana'),
+(33, 'Española'),
+(34, 'China'),
+(35, 'Japonesa'),
+(36, 'Francesa'),
+(37, 'Americana'),
+(38, 'Caribeña'),
+(39, 'Mediterránea'),
+(40, 'Libanesa'),
+(41, 'Peruana'),
+(42, 'Argentina'),
+(43, 'Chilena'),
+(44, 'Colombiana'),
+(45, 'Venezolana'),
+(46, 'Ecuatoriana'),
+(47, 'Árabe'),
+(48, 'Alemana'),
+(49, 'Rusa'),
+(50, 'Nórdica'),
+(51, 'Polaca'),
+(52, 'Hawaiana'),
+(53, 'Sudafricana'),
+(54, 'Marroquí'),
+(55, 'Turca'),
+(56, 'Escandinava'),
+(57, 'Irlandesa'),
+(58, 'Australiana'),
+(59, 'Austriaca'),
+(60, 'Belga'),
+(61, 'Suiza'),
+(62, 'Portuguesa'),
+(63, 'Húngara'),
+(64, 'Sueca'),
+(65, 'Danesa'),
+(66, 'Finlandesa'),
+(67, 'Italiana'),
+(68, 'Mexicana'),
+(69, 'Española'),
+(70, 'China'),
+(71, 'Japonesa'),
+(72, 'Francesa');
+
+INSERT INTO `tbl_user` (`id_user`, `username`, `mail`, `pwd`, `nombre_completo`, `es_admin`, `valid`) VALUES
+(2, 'user2', 'user2@example.com', 'password2', 'User Two', 0, 1),
+(3, 'user3', 'user3@example.com', 'password3', 'User Three', 0, 1),
+(4, 'user4', 'user4@example.com', 'password4', 'User Four', 0, 1),
+(6, 'user6', 'user6@example.com', 'password6', 'User Six', 0, 1),
+(7, 'user7', 'user7@example.com', 'password7', 'User Seven', 0, 1),
+(8, 'user8', 'user8@example.com', 'password8', 'User Eight', 0, 1),
+(9, 'user9', 'user9@example.com', 'password9', 'User Nine', 0, 1),
+(10, 'user10', 'user10@example.com', 'password10', 'User Ten', 0, 1),
+(11, 'admin1', 'admin1@example.com', 'adminpass1', 'Admin One', 1, 1),
+(12, 'admin2', 'admin2@example.com', 'adminpass2', 'Admin Two', 1, 1),
+(13, 'admin3', 'admin3@example.com', 'adminpass3', 'Admin Three', 1, 1),
+(14, 'admin4', 'admin4@example.com', 'adminpass4', 'Admin Four', 1, 1),
+(15, 'admin5', 'admin5@example.com', 'adminpass5', 'Admin Five', 1, 1),
+(16, 'admin6', 'admin6@example.com', 'adminpass6', 'Admin Six', 1, 1),
+(17, 'admin7', 'admin7@example.com', 'adminpass7', 'Admin Seven', 1, 1),
+(18, 'admin8', 'admin8@example.com', 'adminpass8', 'Admin Eight', 1, 1),
+(19, 'admin9', 'admin9@example.com', 'adminpass9', 'Admin Nine', 1, 1),
+(20, 'admin10', 'admin10@example.com', 'adminpass10', 'Admin Ten', 1, 1);
+
+INSERT INTO `tbl_restaurante` (`id_restaurante`, `nombre_restuarante`, `propietario`, `direccion`, `valoracion`, `precio_medio`, `imagen_res`, `email_oficial`) VALUES
+(1, 'Restaurant One', 1, '123 Main St, Cityville', 4.5, 25.00, 'res1.jpg', 'info@restaurantone.com'),
+(2, 'Restaurant Two', 2, '456 Elm St, Townsville', 3.8, 20.00, 'res2.jpg', 'info@restauranttwo.com'),
+(3, 'Restaurant Three', 3, '789 Oak St, Villageton', 5.0, 30.00, 'res3.jpg', 'info@restaurantthree.com'),
+(4, 'Restaurant Four', 4, '101 Pine St, Hamletown', 4.2, 35.00, 'res4.jpg', 'info@restaurantfour.com'),
+(5, 'Restaurant Five', 5, '202 Maple St, Boroughville', 4.7, 40.00, 'res5.jpg', 'info@restaurantfive.com'),
+(6, 'Restaurant Six', 6, '303 Cedar St, Township', 3.5, 22.00, 'res6.jpg', 'info@restaurantsix.com'),
+(7, 'Restaurant Seven', 7, '404 Birch St, Townburg', 4.0, 28.00, 'res7.jpg', 'info@restaurantseven.com'),
+(8, 'Restaurant Eight', 8, '505 Walnut St, Citytown', 4.9, 45.00, 'res8.jpg', 'info@restauranteight.com'),
+(9, 'Restaurant Nine', 9, '606 Oak St, Hamletville', 4.1, 32.00, 'res9.jpg', 'info@restaurantnine.com'),
+(10, 'Restaurant Ten', 10, '707 Pine St, Villageton', 4.6, 38.00, 'res10.jpg', 'info@restaurantten.com');
+
+INSERT INTO `tbl_valoracion` (`id_valoracion`, `username`, `valoracion`, `comentario`, `restaurante`) VALUES
+(21, 1, 4.5, 'Great food and atmosphere!', 1),
+(22, 2, 3.8, 'Good service but food was average.', 2),
+(23, 3, 5.0, 'Excellent experience overall.', 3),
+(24, 4, 4.2, 'Nice place for a family dinner.', 4),
+(25, 5, 4.7, 'Delicious dishes, highly recommended.', 5),
+(26, 6, 3.5, 'Fairly good, could improve.', 6),
+(27, 7, 4.0, 'Enjoyed the meal, will come back.', 7),
+(28, 8, 4.9, 'Outstanding service and food quality.', 8),
+(29, 9, 4.1, 'Decent food, but a bit pricey.', 9),
+(30, 10, 4.6, 'Lovely ambiance, perfect for a date.', 10);
+
+INSERT INTO `tbl_comida_restaurante` (`id_comida_restaurante`, `id_comida`, `id_resturante`) VALUES
+(1, 1, 1),
+(2, 3, 1),
+(3, 32, 1),
+(4, 2, 2),
+(5, 5, 2),
+(6, 31, 2),
+(7, 4, 3),
+(8, 12, 3),
+(9, 19, 3),
+(10, 6, 4),
+(11, 7, 4),
+(12, 30, 4),
+(13, 8, 5),
+(14, 9, 5),
+(15, 28, 5),
+(16, 10, 6),
+(17, 18, 6),
+(18, 34, 6),
+(19, 11, 7),
+(20, 13, 7),
+(21, 33, 7),
+(22, 14, 8),
+(23, 15, 8),
+(24, 16, 8),
+(25, 17, 9),
+(26, 20, 9),
+(27, 35, 9),
+(28, 21, 10),
+(29, 22, 10),
+(30, 23, 10);
 
