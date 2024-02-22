@@ -128,7 +128,8 @@ if (!isset($_SESSION['username'])){
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-                        echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+                        
+                        echo "<strong class='numeroR'>" .  round($promedio * 10)/10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
                         echo "</li>";
@@ -206,7 +207,7 @@ if (!isset($_SESSION['username'])){
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-                        echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+                        echo "<strong class='numeroR'>" .  round($promedio * 10)/10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
                         echo "</li>";
@@ -278,7 +279,7 @@ if (!isset($_SESSION['username'])){
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-                        echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+                        echo "<strong class='numeroR'>" .  round($promedio * 10)/10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
                         echo "</li>";
