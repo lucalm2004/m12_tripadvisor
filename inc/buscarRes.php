@@ -8,7 +8,7 @@ $nombreResta = $_POST['nombreResta'] ?? '';
 $precio = $_POST['precio'] ?? '';
 $valoracion = $_POST['valoracion'] ?? '';
 // Consulta base
-$sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion FROM tbl_restaurante";
+$sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante";
 // Array para almacenar las condiciones
 $conditions = [];
 
@@ -65,7 +65,7 @@ if ($stmt->rowCount() > 0) {
                 $promedio = 'sin valoraciones';
             }
             echo "<li class='card'>";
-            echo "<div class='img'><img src='./img/fernando_alonso.jpg' alt='img' draggable='false'></div>";
+            echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
             echo "<label>" . $row['nombre_restuarante'] . "</label>";
             echo "<div class='valoraciones'>";
             if (is_numeric($promedio)){
@@ -112,7 +112,7 @@ if ($stmt->rowCount() > 0) {
             echo "</li>";
         }
     }
-    elseif (isset($valoracion)){
+    elseif ($valoracion!=''){
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $sql2 = "SELECT COUNT(valoracion) AS cantidad, SUM(valoracion) AS suma FROM tbl_valoracion WHERE restaurante = " . $row['id_restaurante'] ."";
             $stmt2 = $pdo->query($sql2);
@@ -124,13 +124,13 @@ if ($stmt->rowCount() > 0) {
             else{
                 $promedio = 'sin valoraciones';
             }
-            if ($promedio_redondead!=$valoracion){
-                echo "<li class='card' style='display=none'>";
+            if ($promedio!=$valoracion){
+                echo "<li class='card' style='display: none;'>";
             }
             else{
                 echo "<li class='card'>";
             }
-            echo "<div class='img'><img src='./img/fernando_alonso.jpg' alt='img' draggable='false'></div>";
+            echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
             echo "<label>" . $row['nombre_restuarante'] . "</label>";
             echo "<div class='valoraciones'>";
             if (is_numeric($promedio)){
