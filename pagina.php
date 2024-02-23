@@ -82,7 +82,6 @@ if (!isset($_SESSION['username'])) {
     <br>
     <div class="fondoTar" id="carR">
         <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
                 <?php
                 // Consulta SQL corregida
@@ -144,6 +143,7 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </ul>
+            <i id="left" class="fa-solid fa-angle-left"></i>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
@@ -170,7 +170,6 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="fondoTar">
         <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
                 <?php
                 // Consulta SQL corregida
@@ -232,6 +231,7 @@ if (!isset($_SESSION['username'])) {
                 ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
+            <i id="left" class="fa-solid fa-angle-left"></i>
         </div>
     </div>
     <div>
@@ -242,7 +242,6 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="fondoTar">
         <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
                 <?php
                 // Consulta SQL corregida
@@ -304,6 +303,7 @@ if (!isset($_SESSION['username'])) {
                 ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
+            <i id="left" class="fa-solid fa-angle-left"></i>
         </div>
     </div>
     <div class="restauranteModal" id="restauranteModal" style="display: none;">
