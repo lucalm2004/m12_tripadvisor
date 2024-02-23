@@ -29,7 +29,6 @@ arrowBtns.forEach(btn => {
 // Función para iniciar el arrastre del carrusel
 const dragStart = (e) => {
     isDragging = true;
-    carousel.classList.add("dragging");
     startX = e.pageX;
     startScrollLeft = carousel.scrollLeft;
 };
@@ -43,7 +42,6 @@ const dragging = (e) => {
 // Función para detener el arrastre del carrusel
 const dragStop = () => {
     isDragging = false;
-    carousel.classList.remove("dragging");
 };
 
 // Función para detectar el final del carrusel y realizar un scroll infinito

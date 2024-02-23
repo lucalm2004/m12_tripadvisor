@@ -508,7 +508,7 @@ ul {
 }
 
 .wrapper i {
-    top: 50%;
+    top: 35%;
     height: 50px;
     width: 50px;
     cursor: pointer;
@@ -519,7 +519,7 @@ ul {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-    transform: translateY(-120%);
+    /* transform: translateY(-120%); */
     transition: transform 0.1s linear;
 }
 

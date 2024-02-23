@@ -152,6 +152,7 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
     <div>
+        
             <?php
             $sql = "SELECT id_restaurante,imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio ASC LIMIT 1";
             $stmt = $pdo->prepare($sql);
@@ -173,8 +174,8 @@ if (!isset($_SESSION['username'])) {
         <h2 class="subT">Los Mas caros</h2>
     </div>
     <div class="fondoTar">
-        <div class="wrapper">
-            <ul class="carousel">
+        <div id="wrapper2" class="wrapper">
+            <ul id="carrusel2" class="carousel">
                 <?php
                 // Consulta SQL corregida
                 $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio DESC LIMIT 12";
@@ -193,7 +194,7 @@ if (!isset($_SESSION['username'])) {
                         } else {
                             $promedio = 'sin valoraciones';
                         }
-                        echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
+                        echo "<li id='card2' class='card' onclick='openModal(".$row['id_restaurante'].")'>";
                         echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
                         echo "<label>" . $row['nombre_restuarante'] . "</label>";
                         echo "<div class='valoraciones'>";
@@ -234,8 +235,9 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </ul>
-            <i id="right" class="fa-solid fa-angle-right"></i>
-            <i id="left" class="fa-solid fa-angle-left"></i>
+            <i id="left2" class="fa-solid fa-angle-left"></i>
+
+            <i id="right2" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
     <div>
@@ -245,8 +247,8 @@ if (!isset($_SESSION['username'])) {
         <h2 class="subT">Los Mas baratos</h2>
     </div>
     <div class="fondoTar">
-        <div class="wrapper">
-            <ul class="carousel">
+        <div id="wrapper3" class="wrapper">
+            <ul id="carrusel3" class="carousel">
                 <?php
                 // Consulta SQL corregida
                 $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio LIMIT 12";
@@ -306,13 +308,16 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </ul>
-            <i id="right" class="fa-solid fa-angle-right"></i>
-            <i id="left" class="fa-solid fa-angle-left"></i>
+            <i id="left3" class="fa-solid fa-angle-left"></i>
+            <i id="right3" class="fa-solid fa-angle-right"></i>
+
         </div>
     </div>
+    
     <div class="restauranteModal" id="restauranteModal" style="display: none;">
 
 </div>
+
     <footer class="footer">
         <div>
             <label for="" class="tn">Acerca de TripAdvisor</label>
@@ -351,6 +356,8 @@ if (!isset($_SESSION['username'])) {
 </html>
 <script src="./js/jsPagina.js"></script>
 <script src="./js/tarjetas.js"></script>
+<script src="./js/tarjetas1.js"></script>
+<script src="./js/trajetas2.js"></script>
 <script src="./js/buscarR.js"></script>
 <script src="./js/script_cmnt.js"></script>
 <!-- <script src="./js/estrellas.js"></script> -->
