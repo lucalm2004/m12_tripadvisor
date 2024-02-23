@@ -91,7 +91,7 @@ $resultadoVal = $sqlVal->fetch(PDO::FETCH_ASSOC);
     <br>
     <label for="">Media de puntuaciones</label>
     <div>
-        <p><?php echo $resultadoVal['media_val'] + 0 ?></p>
+        <p><?php echo round($resultadoVal['media_val'], 1, PHP_ROUND_HALF_DOWN); ?></p>
         <?php
         if ($resultadoVal['media_val'] == 5) {
             echo "<img src='./img/estrella_valoracion_5.png' class='estrella_foto'>";
