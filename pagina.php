@@ -101,7 +101,7 @@ if (!isset($_SESSION['username'])) {
                         } else {
                             $promedio = 'sin valoraciones';
                         }
-                        echo "<li class='card'>";
+                        echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
                         echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
                         echo "<label>" . $row['nombre_restuarante'] . "</label>";
                         echo "<div class='valoraciones'>";
@@ -189,7 +189,7 @@ if (!isset($_SESSION['username'])) {
                         } else {
                             $promedio = 'sin valoraciones';
                         }
-                        echo "<li class='card'>";
+                        echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
                         echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
                         echo "<label>" . $row['nombre_restuarante'] . "</label>";
                         echo "<div class='valoraciones'>";
@@ -261,7 +261,7 @@ if (!isset($_SESSION['username'])) {
                         } else {
                             $promedio = 'sin valoraciones';
                         }
-                        echo "<li class='card'>";
+                        echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
                         echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
                         echo "<label>" . $row['nombre_restuarante'] . "</label>";
                         echo "<div class='valoraciones'>";
