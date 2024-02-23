@@ -105,7 +105,7 @@ if ($stmt->rowCount() > 0) {
             else{
                 echo "<span style='font-size: 16px;'>opiniones</span>";
             }
-            echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+            echo "<strong class='numeroR'>" .  round($promedio * 10) / 10 . "</strong>";
             echo "</div>";
             echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
             echo "</li>";
@@ -120,7 +120,7 @@ if ($stmt->rowCount() > 0) {
             $result = $stmt2->fetch(PDO::FETCH_ASSOC);
             if ($result['cantidad']!=0){
                 $promedio = $result['suma'] / $result['cantidad'];
-                $promedio2 = round($promedio);
+                $promedio2 = floor($promedio);
             }
             else{
                 $promedio = 'sin valoraciones';
@@ -173,7 +173,7 @@ if ($stmt->rowCount() > 0) {
             else{
                 echo "<span style='font-size: 16px;'>opiniones</span>";
             }
-            echo "<strong class='numeroR'>" .  $promedio . "</strong>";
+            echo "<strong class='numeroR'>" .  round($promedio * 10) / 10 . "</strong>";
             echo "</div>";
             echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
             echo "</li>";
@@ -185,13 +185,11 @@ if ($zero!=true){
     echo "<i id='right' class='fa-solid fa-angle-right'></i>";
 }
 else{
-    echo "<div style='display: flex; justify-content: center; align-items: center;'>
-        <h1 style='color: green;'>0 resultados</h1>
-    </div>"; 
+    echo "<h1 style='color: green;'>0 resultados</h1>";
 }
 }
 else{
-    echo "<div style='display: flex; justify-content: center; align-items: center;'>
+    echo "<div>
         <h1 style='color: green;'>0 resultados</h1>
     </div>";
 }

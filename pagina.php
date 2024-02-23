@@ -85,7 +85,7 @@ if (!isset($_SESSION['username'])) {
     <div class="fondoTar" id="carR">
         <div class="wrapper">
             <ul class="carousel">
-                <?php
+            <?php
                 // Consulta SQL corregida
                 $sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante";
 
@@ -103,7 +103,7 @@ if (!isset($_SESSION['username'])) {
                         } else {
                             $promedio = 'sin valoraciones';
                         }
-                        echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
+                        echo "<li class='card'>";
                         echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
                         echo "<label>" . $row['nombre_restuarante'] . "</label>";
                         echo "<div class='valoraciones'>";
@@ -132,7 +132,6 @@ if (!isset($_SESSION['username'])) {
                         } else {
                             echo "<span style='font-size: 16px;'>opiniones</span>";
                         }
-
                         echo "<strong class='numeroR'>" .  round($promedio * 10) / 10 . "</strong>";
                         echo "</div>";
                         echo "<span>Precio medio de " . $row['precio_medio'] . "</span>";
@@ -143,7 +142,7 @@ if (!isset($_SESSION['username'])) {
                             <h1 style='color: green;'>0 resultados</h1>
                         </div>";
                 }
-                ?>
+            ?>
             </ul>
             <i id="left" class="fa-solid fa-angle-left"></i>
             <i id="right" class="fa-solid fa-angle-right"></i>
@@ -311,48 +310,6 @@ if (!isset($_SESSION['username'])) {
     <div class="restauranteModal" id="restauranteModal" style="display: none;">
 
 </div>
-    <!-- <div>
-        <div class="restauranteModal" id="restauranteModal" style="display: block;">
-            <button type="button" class="cerrar" id="cerrarR"><img src="./img/cerrar.png" class="imgB"></button>
-            <br>
-            <div class="tituloR">
-                <h1 class="h1R">Titulo Restaurante</h1>
-                <img src="" alt="estrellas">
-                <label for="">Numero opiniones</label>
-            </div>
-            <br>
-            <div>
-               
-                <button id='btnImagen' class='btnImagen'>Cambiar Imagen</button>
-                <img src="./img/id.jpg" id="imgActive" alt="banerR" class="portada">
-
-            </div>
-            <br>
-            <br>
-            <div class="columna">
-                <h2 class="h2M">Puntuaciones y opiniones:</h2>
-                <label for="">media de puntuacion</label>
-                <img src="" alt="Imagen de puntuaciones y opiniones">
-            </div>
-            <div class="columna">
-                <h2 class="h2M">Detalles:</h2>
-                <label for="">Rango de precios</label>
-                <br>
-                <br>
-                <label for="">Precio</label>
-                <br>
-                <br>
-                <label for="">Tipos de cociona</label>
-                <br>
-                <br>
-                <label for="">tipos</label>
-            </div>
-            <div class="columna2">
-                <h2 class="h2M">Ubicación y contacto:</h2>
-                <label for="">Calle</label>
-            </div>
-        </div>
-    </div> -->
     <footer class="footer">
         <div>
             <label for="" class="tn">Acerca de TripAdvisor</label>
