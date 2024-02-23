@@ -1,17 +1,17 @@
-$(function() {
-    $(".rateyo").rateYo().on("rateyo.change", function(e, data) {
-        var rating = data.rating;
-        $(this).parent().find('.result').text(rating);
-        $(this).parent().find('input[name=rating]').val(rating);
-    });
-});
+// $(function() {
+//     $(".rateyo").rateYo().on("rateyo.change", function(e, data) {
+//         var rating = data.rating;
+//         $(this).parent().find('.result').text(rating);
+//         $(this).parent().find('input[name=rating]').val(rating);
+//     });
+// });
 
 
 // Obtener el formulario por su ID
-var form_valoracion = document.getElementById("form_valoracion");
+var form_valoracion = document.getElementById("botonRev");
 
 // Agregar un controlador de eventos para el evento de envío del formulario
-form_valoracion.addEventListener("submit", function(event) {
+form_valoracion.addEventListener("click", function(event) {
     // Prevenir el comportamiento predeterminado de envío del formulario
     event.preventDefault();
 

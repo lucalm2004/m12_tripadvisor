@@ -13,7 +13,7 @@
         <button id="cambiarAInicio" class="boton">Iniciar sesión</button>
     </div>
     <div class="divL" id="log">
-        <form action="" method="post">
+        <form class="form" action="" method="post">
             <img src="./img/tripadvisor.svg">
             <br>
             <br>
@@ -31,7 +31,7 @@
         </form>
     </div>
     <div class="divL" id="reg">
-        <form action="" method="post">
+        <form class="form" action="" method="post">
             <img src="./img/tripadvisor.svg">
             <br>
             <br>

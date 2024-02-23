@@ -9,7 +9,7 @@
     margin: 20px;
 }
 
-form {
+.form {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -728,7 +728,7 @@ ul {
     .h2M {
         font-size: 40px;
     }
-    form {
+    .form {
         padding: 40px;
         width: 400px;
     }
@@ -779,7 +779,7 @@ ul {
     resize: none;
     scrollbar-color: rgba(0, 0, 0, .6) transparent;
     scrollbar-width: thin;
-    width: calc(431% - 4px);
+    width: calc(96.5% - 4px);
     margin-bottom: 1%;
     font-family: inherit;
     font-size: inherit;
