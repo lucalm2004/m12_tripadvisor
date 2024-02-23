@@ -528,11 +528,11 @@ ul {
 }
 
 .wrapper i:first-child {
-    left: -20px;
+    left: 0px;
 }
 
 .wrapper i:last-child {
-    right: -20px;
+    right:  0px;
 }
 
 .wrapper .carousel {
