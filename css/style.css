@@ -846,3 +846,7 @@ ul {
         transform: translateY(100%);
     }
 }
+
+.anuncio {
+    cursor: pointer;
+}

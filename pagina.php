@@ -152,13 +152,13 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
     <div>
-        <div class="anuncio">
             <?php
-            $sql = "SELECT imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio ASC LIMIT 1";
+            $sql = "SELECT id_restaurante,imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio ASC LIMIT 1";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($resultado as $row) {
+                echo "<div class='anuncio' onclick='openModal(" . $row['id_restaurante'] . ")'>";
                 echo "<img src='./img/". $row['imagen_res']."' class='rotada'>";
             }
             ?>
