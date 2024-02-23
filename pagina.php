@@ -38,7 +38,7 @@ if (!isset($_SESSION['username'])) {
     <div class="cuerpo">
         <h1>Busca sitios para comer</h1>
         <div class="filtros">
-            <select name="" id="" class="mi-select">
+            <select name="" id="valoracion" class="mi-select">
                 <option value="">Según las estrellas</option>
                 <option value="1">1 estrella</option>
                 <option value="2">2 estrellas</option>
