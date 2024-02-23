@@ -117,8 +117,6 @@ form_valoracion.addEventListener("click", function(event) {
             return;
         }
     }
-
-    // Llamar a la función para comprobar la disponibilidad del nombre
     CrearValoracion();
 });
 
@@ -146,6 +144,9 @@ function CrearValoracion() {
             });
             // Resetear el formulario
             form_valoracion.reset();
+            id = document.getElementById('id_res').value;
+
+            starComents(id)
 
         } else {
             Swal.fire({
@@ -158,6 +159,12 @@ function CrearValoracion() {
         }
     }
 
+    id_res = document.getElementById('id_res').value;
+    ratings = document.getElementById('ratings');
+    rating = ratings.innerHTML;
+    formdata.append("id_res", id_res);
+    console.log(rating)
+    formdata.append('rating', rating);
     // Enviamos la solicitud HTTP al servidor con los datos en 'formdata'
     ajax.send(formdata);
 }

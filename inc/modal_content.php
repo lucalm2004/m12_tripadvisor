@@ -24,6 +24,7 @@ $tipos_comida = $resultado['nombre_comida'];
 $imagenRes = $resultado['imagen_banner'];
 $precio_medio = $resultado['precio_medio'];
 $emailRes = $resultado['email_oficial'];
+$id_res = $resultado['id_restaurante'];
 
 ?>
 
@@ -163,7 +164,9 @@ $resultadoVal = $sqlVal->fetch(PDO::FETCH_ASSOC);
     </div>
     <div>
         <form method="post" id="form_valoracion" style="padding: 0; margin: 0;">
-
+            <?php
+            echo "<input type='hidden' id='id_res' value=".$id_res.">"
+            ?>
             <div>
                 <textarea name="comentario" id="comentario" class="review" placeholder="This spot is great for a casual night out…" rows="5" minlength="1" style="height: calc(131px);"></textarea>
             </div>
@@ -172,7 +175,7 @@ $resultadoVal = $sqlVal->fetch(PDO::FETCH_ASSOC);
         <div class="rateyo" id="rating" data-rateyo-rating="0" data-rateyo-num-stars="5" data-rateyo-score="3">
         </div>
         <span style="margin-left:0.5%">Rating:</span>
-        <span class="result">0</span>
+        <span id="ratings" class="result">0</span>
         <input type="hidden" name="rating">
         <button class="botonReview" id="botonRev" style="margin-bottom: 10%;" name="add" type="submit"><span>Submit review</span></button>
     </div>

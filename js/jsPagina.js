@@ -142,19 +142,3 @@ function estrellas() {
         });
     });
 }
-
-// function activarBoton() {
-
-//     document.addEventListener("DOMContentLoaded", function() {
-//         var boton = document.getElementById("botonRev");
-
-//         boton.addEventListener("click", function() {
-//             activarComentario();
-//         });
-//     });
-
-// }
-
-function activarComentario() {
-
-}
