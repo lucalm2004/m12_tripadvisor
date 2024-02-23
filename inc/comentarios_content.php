@@ -28,10 +28,30 @@ $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($resultado as $row) {
-    echo "<div>";
+    echo "<div class='review2'>";
     echo "<h6>Usuario: " . $row['username'] . "</h6>";
     echo "<p>Comentario: " . $row['comentario'] . "</p>";
-    echo "Valoración: " . $row['valoracion'] . "<br>";
+    if ($row['valoracion'] == 5) {
+        echo "<img src='./img/estrella_valoracion_5.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 4.5 and $row['valoracion'] < 5) {
+        echo "<img src='./img/estrella_valoracion_4,5.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 4 and $row['valoracion'] < 4.5) {
+        echo "<img src='./img/estrella_valoracion_4.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 3.5 and $row['valoracion'] < 4) {
+        echo "<img src='./img/estrella_valoracion_3,5.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 3 and $row['valoracion'] < 3.5) {
+        echo "<img src='./img/estrella_valoracion_3.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 2.5 and $row['valoracion'] < 3) {
+        echo "<img src='./img/estrella_valoracion_2,5.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 2 and $row['valoracion'] < 2.5) {
+        echo "<img src='./img/estrella_valoracion_2.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 1.5 and $row['valoracion'] < 2) {
+        echo "<img src='./img/estrella_valoracion_1,5.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 1 and $row['valoracion'] < 1.5) {
+        echo "<img src='./img/estrella_valoracion_1.png' class='estrella_foto'>";
+    } elseif ($row['valoracion'] >= 0.1 and $row['valoracion'] < 1) {
+        echo "<img src='./img/estrella_valoracion_0,5.png' class='estrella_foto'>";
+    }
     echo "</div>";
     echo "<br>";
 }

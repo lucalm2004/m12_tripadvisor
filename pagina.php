@@ -151,20 +151,23 @@ if (!isset($_SESSION['username'])) {
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
-    <div>
-        
-            <?php
-            $sql = "SELECT id_restaurante,imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio ASC LIMIT 1";
+
+
+    
+
+    <?php
+            $sql = "SELECT id_restaurante,imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio DESC LIMIT 1";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($resultado as $row) {
-                echo "<div class='anuncio' onclick='openModal(" . $row['id_restaurante'] . ")'>";
-                echo "<img src='./img/". $row['imagen_res']."' class='rotada'>";
+                echo "<div class='anuncio2' style='background-image: url(./img/".$row['imagen_res'].")!important;'>";
+                echo  "<h1 style='margin-left: 1%;'>El restaurante mejor valorado</h1>";
+                echo "<button class='botonV' onclick='openModal(".$row['id_restaurante'].")'><b>Ver restaurante</b></button>";
             }
-            ?>
             
-            <h2 class="h1O">El restaurante más asequible según nuestros usuarios.</h2>
+            ?>
+            <br>
         </div>
     </div>
     <div>
@@ -314,6 +317,21 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
     
+        <div>
+                    <?php
+            $sql = "SELECT id_restaurante,imagen_res FROM tbl_restaurante ORDER BY tbl_restaurante.precio_medio ASC LIMIT 1";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($resultado as $row) {
+                echo "<div class='anuncio' onclick='openModal(" . $row['id_restaurante'] . ")'>";
+                echo "<img src='./img/". $row['imagen_res']."' class='rotada'>";
+            }
+            ?>
+            
+            <h2 class="h1O">El restaurante más asequible según nuestros usuarios.</h2>
+        </div>
+    
     <div class="restauranteModal" id="restauranteModal" style="display: none;">
 
 </div>
@@ -360,6 +378,5 @@ if (!isset($_SESSION['username'])) {
 <script src="./js/trajetas2.js"></script>
 <script src="./js/buscarR.js"></script>
 <script src="./js/script_cmnt.js"></script>
-<!-- <script src="./js/estrellas.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
