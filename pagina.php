@@ -17,6 +17,7 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="icon" id="favicon" href="https://static.tacdn.com/favicon.ico?v2" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
 </head>
 
@@ -305,9 +306,11 @@ if (!isset($_SESSION['username'])) {
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
+    <div class="restauranteModal" id="restauranteModal" style="display: none;">
 
-    <div>
-        <div class="restauranteModal" id="restauranteModal">
+</div>
+    <!-- <div>
+        <div class="restauranteModal" id="restauranteModal" style="display: block;">
             <button type="button" class="cerrar" id="cerrarR"><img src="./img/cerrar.png" class="imgB"></button>
             <br>
             <div class="tituloR">
@@ -317,12 +320,7 @@ if (!isset($_SESSION['username'])) {
             </div>
             <br>
             <div>
-                <!-- <?php
-                        //      if ($_SESSION['rol']==1){
-                        // echo "<button id='fotoPrivadas' class='btnImagen'>Cambiar Imagen</button>";
-                        //      }
-                        //      
-                        ?> -->
+               
                 <button id='btnImagen' class='btnImagen'>Cambiar Imagen</button>
                 <img src="./img/id.jpg" id="imgActive" alt="banerR" class="portada">
 
@@ -352,7 +350,7 @@ if (!isset($_SESSION['username'])) {
                 <label for="">Calle</label>
             </div>
         </div>
-    </div>
+    </div> -->
     <footer class="footer">
         <div>
             <label for="" class="tn">Acerca de TripAdvisor</label>
@@ -390,6 +388,6 @@ if (!isset($_SESSION['username'])) {
 
 </html>
 <script src="./js/jsPagina.js"></script>
-<script src="./js/imagen.js"></script>
 <script src="./js/tarjetas.js"></script>
 <script src="./js/buscarR.js"></script>
+<script src="./js/script_cmnt.js"></script>

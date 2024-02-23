@@ -1,6 +1,9 @@
-document.getElementById('btnImagen').onclick = function() {
-    mostrarSweetAlert('id')
-};
+function btnImagen() {
+    document.getElementById('btnImagen').onclick = function() {
+        mostrarSweetAlert('id')
+    };
+}
+
 var activeImage = document.getElementById('imgActive');
 
 function mostrarSweetAlert(tipo) {

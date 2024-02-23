@@ -248,7 +248,7 @@ h1 {
     flex-basis: 100%;
 }
 
-.numeroR{
+.numeroR {
     color: #00be6f;
     font-weight: bold;
     font-size: 100%;
@@ -475,7 +475,7 @@ ul {
     width: 95.5%;
 }
 
-.subT{
+.subT {
     margin-left: 6%;
 }
 
@@ -501,9 +501,9 @@ ul {
     width: 100px !important;
 }
 
-.valoraciones{
-    display: flex; 
-    align-items:center;
+.valoraciones {
+    display: flex;
+    align-items: center;
     gap: 10%;
 }
 
@@ -518,20 +518,24 @@ ul {
     line-height: 50px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
     transform: translateY(-120%);
     transition: transform 0.1s linear;
 }
-.wrapper i:active{
+
+.wrapper i:active {
     transform: translateY(-50%) scale(0.85);
 }
-.wrapper i:first-child{
+
+.wrapper i:first-child {
     left: -20px;
 }
-.wrapper i:last-child{
+
+.wrapper i:last-child {
     right: -20px;
 }
-.wrapper .carousel{
+
+.wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc((100% / 4) - 12px);
@@ -542,25 +546,32 @@ ul {
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
+
 .carousel::-webkit-scrollbar {
     display: none;
 }
+
 .carousel.no-transition {
     scroll-behavior: auto;
 }
+
 .carousel.dragging {
     scroll-snap-type: none;
     scroll-behavior: auto;
 }
+
 .carousel.dragging .card {
     cursor: grab;
     user-select: none;
 }
-.carousel :where(.card, .img) {
+
+.carousel :where(.card,
+.img) {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .carousel .card {
     scroll-snap-align: start;
     height: 342px;
@@ -572,6 +583,7 @@ ul {
     width: 240px;
     align-items: first baseline;
 }
+
 .carousel .card .img {
     background: #8B53FF;
     height: 148px;
@@ -579,6 +591,7 @@ ul {
     margin-top: 10%;
     border-radius: 5px;
 }
+
 .card .img img {
     width: 240px;
     height: 240px;
@@ -587,6 +600,7 @@ ul {
     /* object-fit: cover;
     border: 4px solid #fff; */
 }
+
 .carousel .card label {
     font-weight: bold;
     margin-right: 100px;
@@ -596,6 +610,7 @@ ul {
     margin-top: 50px;
     /* margin-left: -125px; */
 }
+
 .carousel .card span {
     font-size: 12px;
     font-weight: bold;
@@ -608,21 +623,21 @@ ul {
     cursor: pointer;
 }
 
-.fondoTar{
+.fondoTar {
     height: 360px;
     padding-left: 6%;
     background-color: white;
     border-top: solid green 3px;
 }
 
-.rotada{
+.rotada {
     transform: rotate(-4deg);
     width: 160px;
     margin-right: 4%;
     border-radius: 5px;
 }
 
-.anuncio{
+.anuncio {
     display: flex;
     background-color: antiquewhite;
     padding-top: 2%;
@@ -636,7 +651,7 @@ ul {
     width: 1076px;
 }
 
-.h1O{
+.h1O {
     justify-content: center;
     font-size: 30px;
 }
@@ -645,15 +660,16 @@ ul {
 .star.checked {
     color: gold;
 }
+
 @media screen and (max-width: 900px) {
     .wrapper .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px);
+        grid-auto-columns: calc((100% / 2) - 9px);
     }
 }
 
 @media screen and (max-width: 600px) {
     .wrapper .carousel {
-    grid-auto-columns: 100%;
+        grid-auto-columns: 100%;
     }
 }
 
@@ -730,4 +746,69 @@ ul {
     .boton {
         font-size: 25px;
     }
+}
+
+
+/* Estilos comentarios */
+
+.comentarios {
+    margin-top: 31%;
+    margin-left: 1%;
+}
+
+.posicion {
+    display: flex;
+    gap: 8px 80%;
+    margin-bottom: 16px;
+}
+
+.unstyle {
+    all: unset;
+}
+
+.icon-with-text {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente los elementos */
+}
+
+.review {
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    margin-left: -18px;
+    resize: none;
+    scrollbar-color: rgba(0, 0, 0, .6) transparent;
+    scrollbar-width: thin;
+    width: calc(431% - 4px);
+    margin-bottom: 1%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.botonReview {
+    display: block;
+    background-color: black;
+    color: white;
+    border-radius: 28px;
+    font-size: 15px;
+    padding: 18px 50px;
+    margin-left: 84%;
+    margin-top: -50px;
+    transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+}
+
+.botonReview:hover {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.icon-with-text svg {
+    margin-right: 5px;
+    /* Espacio entre el SVG y el texto */
+}
+
+.icon-with-text span {
+    text-decoration-line: underline;
 }
