@@ -63,7 +63,7 @@ if ($stmt->rowCount() > 0) {
             else{
                 $promedio = 'sin valoraciones';
             }
-            echo "<li class='card'>";
+            echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
             echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
             echo "<label>" . $row['nombre_restuarante'] . "</label>";
             echo "<div class='valoraciones'>";
@@ -129,7 +129,7 @@ if ($stmt->rowCount() > 0) {
                 echo "<li class='card' style='display: none;'>";
             }
             else{
-                echo "<li class='card'>";
+                echo "<li class='card' onclick='openModal(".$row['id_restaurante'].")'>";
                 $zero=false;
             }
             echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
