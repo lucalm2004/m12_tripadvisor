@@ -71,7 +71,7 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </select>
-            <button id="resetF" class="">Resetear</button>
+            <button id="resetF" class="boton2"><img src="./img/refresh.svg" class="reset" id=""></button>
 
         </div>
         <br>

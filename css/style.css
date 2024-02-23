@@ -850,3 +850,11 @@ ul {
 .anuncio {
     cursor: pointer;
 }
+
+#resetF {
+    transition: transform 0.5s ease;
+}
+
+.reset {
+    width: 30px;
+}
