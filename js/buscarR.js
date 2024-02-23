@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var precio = document.getElementById("precio").value;
 
+        var valoracion = document.getElementById("valoracion").value;
+
+
         // Crear una instancia de XMLHttpRequest
         var xhr = new XMLHttpRequest();
 
@@ -24,6 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         // Corrección: Cambiar "xhttp" a "xhr"
-        xhr.send("nombreResta=" + encodeURIComponent(valorBusqueda) + "&precio=" + encodeURIComponent(precio)); // Corrección: Agregar "&" entre los parámetros
+        xhr.send("nombreResta=" + encodeURIComponent(valorBusqueda) + "&precio=" + encodeURIComponent(precio) + "&valoracion=" + encodeURIComponent(valoracion)); // Corrección: Agregar "&" entre los parámetros
     });
 });

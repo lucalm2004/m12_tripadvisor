@@ -8,10 +8,10 @@ $nombreResta = $_POST['nombreResta'] ?? '';
 $precio = $_POST['precio'] ?? '';
 $valoracion = $_POST['valoracion'] ?? '';
 // Consulta base
-$sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion FROM tbl_restaurante";
+$sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante";
 // Array para almacenar las condiciones
 $conditions = [];
-
+$zero='';
 // Agregar condiciones según los filtros
 if (!empty($nombreResta)) {
     $conditions[] = "tbl_restaurante.nombre_restuarante LIKE :restaurante";
@@ -51,8 +51,7 @@ if (!empty($nombreResta)) {
 $stmt->execute();
 if ($stmt->rowCount() > 0) {
     echo "<div class='wrapper'>";
-    echo "<i id='left' class='fa-solid fa-angle-left'></i>";
-    echo "<ul class='carousel'>";
+    echo "<ul class='carousel'  name='zero'>";
     if ($valoracion==''){
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $sql2 = "SELECT COUNT(valoracion) AS cantidad, SUM(valoracion) AS suma FROM tbl_valoracion WHERE restaurante = " . $row['id_restaurante'] ."";
@@ -65,7 +64,7 @@ if ($stmt->rowCount() > 0) {
                 $promedio = 'sin valoraciones';
             }
             echo "<li class='card'>";
-            echo "<div class='img'><img src='./img/fernando_alonso.jpg' alt='img' draggable='false'></div>";
+            echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
             echo "<label>" . $row['nombre_restuarante'] . "</label>";
             echo "<div class='valoraciones'>";
             if (is_numeric($promedio)){
@@ -112,25 +111,28 @@ if ($stmt->rowCount() > 0) {
             echo "</li>";
         }
     }
-    elseif (isset($valoracion)){
+    elseif ($valoracion!=''){
+        $zero=true;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $promedio2='';
             $sql2 = "SELECT COUNT(valoracion) AS cantidad, SUM(valoracion) AS suma FROM tbl_valoracion WHERE restaurante = " . $row['id_restaurante'] ."";
             $stmt2 = $pdo->query($sql2);
             $result = $stmt2->fetch(PDO::FETCH_ASSOC);
             if ($result['cantidad']!=0){
                 $promedio = $result['suma'] / $result['cantidad'];
-                $promedio = round($promedio);
+                $promedio2 = round($promedio);
             }
             else{
                 $promedio = 'sin valoraciones';
             }
-            if ($promedio_redondead!=$valoracion){
-                echo "<li class='card' style='display=none'>";
+            if ($promedio2!=$valoracion){
+                echo "<li class='card' style='display: none;'>";
             }
             else{
                 echo "<li class='card'>";
+                $zero=false;
             }
-            echo "<div class='img'><img src='./img/fernando_alonso.jpg' alt='img' draggable='false'></div>";
+            echo "<div class='img'><img src='./img/" . $row['imagen_res'] . "' alt='img' draggable='false'></div>";
             echo "<label>" . $row['nombre_restuarante'] . "</label>";
             echo "<div class='valoraciones'>";
             if (is_numeric($promedio)){
@@ -178,7 +180,15 @@ if ($stmt->rowCount() > 0) {
         }
     }
 echo "</ul>";
-echo "<i id='right' class='fa-solid fa-angle-right'></i>";
+if ($zero!=true){
+    echo "<i id='left' class='fa-solid fa-angle-left'></i>";
+    echo "<i id='right' class='fa-solid fa-angle-right'></i>";
+}
+else{
+    echo "<div style='display: flex; justify-content: center; align-items: center;'>
+        <h1 style='color: green;'>0 resultados</h1>
+    </div>"; 
+}
 }
 else{
     echo "<div style='display: flex; justify-content: center; align-items: center;'>

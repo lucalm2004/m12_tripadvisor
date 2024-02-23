@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
     <div class="cuerpo">
         <h1>Busca sitios para comer</h1>
         <div class="filtros">
-            <select name="" id="" class="mi-select">
+            <select name="" id="valoracion" class="mi-select">
                 <option value="">Según las estrellas</option>
                 <option value="1">1 estrella</option>
                 <option value="2">2 estrellas</option>
@@ -84,7 +84,6 @@ if (!isset($_SESSION['username'])) {
     <br>
     <div class="fondoTar" id="carR">
         <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
                 <?php
                 // Consulta SQL corregida
@@ -146,6 +145,7 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </ul>
+            <i id="left" class="fa-solid fa-angle-left"></i>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
@@ -172,7 +172,6 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="fondoTar">
         <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
                 <?php
                 // Consulta SQL corregida
@@ -234,6 +233,7 @@ if (!isset($_SESSION['username'])) {
                 ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
+            <i id="left" class="fa-solid fa-angle-left"></i>
         </div>
     </div>
     <div>
@@ -244,7 +244,6 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="fondoTar">
         <div class="wrapper">
-            <i id="left" class="fa-solid fa-angle-left"></i>
             <ul class="carousel">
                 <?php
                 // Consulta SQL corregida
@@ -306,6 +305,7 @@ if (!isset($_SESSION['username'])) {
                 ?>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
+            <i id="left" class="fa-solid fa-angle-left"></i>
         </div>
     </div>
     <div class="restauranteModal" id="restauranteModal" style="display: none;">
