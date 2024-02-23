@@ -532,7 +532,7 @@ ul {
 }
 
 .wrapper i:last-child {
-    right:  0px;
+    right: 0px;
 }
 
 .wrapper .carousel {
@@ -811,4 +811,38 @@ ul {
 
 .icon-with-text span {
     text-decoration-line: underline;
+}
+
+.bannerImg {
+    height: 400px;
+    width: 95.5%;
+}
+
+.aparecer {
+    transform: translateX(-50%);
+    animation: aparecerDesdeAbajo 1s ease forwards;
+}
+
+@keyframes aparecerDesdeAbajo {
+    0% {
+        transform: translate(0%, 100%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+
+.ocultar {
+    animation: ocultarModal 1s ease forwards;
+}
+
+@keyframes ocultarModal {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
 }

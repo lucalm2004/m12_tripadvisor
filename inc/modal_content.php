@@ -45,7 +45,7 @@ $resultadoVal = $sqlVal->fetch(PDO::FETCH_ASSOC);
 <button type="button" class="cerrar" id="cerrarR"><img src="./img/cerrar.png" class="imgB"></button>
 <br>
 <div class="tituloR">
-    <h1 class="h1R"><?php echo $nombreRes; ?></h1>
+    <h1 id="nombreRes" class="h1R"><?php echo $nombreRes; ?></h1>
     <?php
     if ($resultadoVal['media_val'] == 5) {
         echo "<img src='./img/estrella_valoracion_5.png' class='estrella_foto'>";
@@ -79,7 +79,7 @@ $resultadoVal = $sqlVal->fetch(PDO::FETCH_ASSOC);
 
     ?>
     <button id='btnImagen' class='btnImagen'>Cambiar Imagen</button>
-    <img src="./img/<?php echo $imagenRes; ?>" id="imgActive" alt="banerR" class="portada">
+    <img src="./img/<?php echo $imagenRes; ?>" id="imgActive" class="bannerImg" alt="banerR" class="portada">
 
 </div>
 <br>
@@ -142,7 +142,7 @@ $resultadoVal = $sqlVal->fetch(PDO::FETCH_ASSOC);
     <p><?php echo $direccionRes; ?></p>
     <br>
     <label for="">E-mail de contacto</label>
-    <p><?php echo $emailRes; ?></p>
+    <p id="emailRes"><?php echo $emailRes; ?></p>
 
 </div>
 

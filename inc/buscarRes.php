@@ -4,17 +4,21 @@ require_once("./conexion.php");
 
 // Capturar los filtros enviados por POST
 $nombreResta = $_POST['nombreResta'] ?? '';
-// $tipo_comida = $_POST['tipo_comida'] ?? '';
+$tipo_comida = $_POST['tipo_comida'] ?? '';
 $precio = $_POST['precio'] ?? '';
 $valoracion = $_POST['valoracion'] ?? '';
 // Consulta base
-$sql = "SELECT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante";
+$sql = "SELECT DISTINCT tbl_restaurante.id_restaurante, tbl_restaurante.nombre_restuarante, tbl_restaurante.precio_medio, tbl_restaurante.valoracion, tbl_restaurante.imagen_res FROM tbl_restaurante INNER JOIN tbl_comida_restaurante ON tbl_restaurante.id_restaurante = tbl_comida_restaurante.id_restaurante";
 // Array para almacenar las condiciones
 $conditions = [];
 $zero='';
 // Agregar condiciones según los filtros
 if (!empty($nombreResta)) {
     $conditions[] = "tbl_restaurante.nombre_restuarante LIKE :restaurante";
+}
+
+if (!empty($tipo_comida)) {
+    $conditions[] = "tbl_comida_restaurante.id_comida = :id_comida";
 }
 
 if (!empty($precio)) {
@@ -45,6 +49,10 @@ $stmt = $pdo->prepare($sql);
 if (!empty($nombreResta)) {
     $nombreResta2 = "%" . $nombreResta . "%";
     $stmt->bindParam(':restaurante', $nombreResta2);
+}
+
+if (!empty($tipo_comida)) {
+    $stmt->bindParam(':id_comida', $tipo_comida);
 }
 
 // Ejecutar la consulta

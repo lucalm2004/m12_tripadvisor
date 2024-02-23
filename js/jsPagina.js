@@ -59,11 +59,12 @@ function cargarScript() {
 
 function btnImagen() {
     document.getElementById('btnImagen').onclick = function() {
-        mostrarSweetAlert('id')
+        id_res = document.getElementById('id_res').value;
+        console.log(id_res);
+        mostrarSweetAlert(id_res)
     };
 }
 
-var activeImage = document.getElementById('imgActive');
 
 function mostrarSweetAlert(tipo) {
     Swal.fire({
@@ -93,16 +94,14 @@ function mostrarSweetAlert(tipo) {
                         .then(data => {
                             if (data.success) {
                                 // Actualizar el src de la imagen
-                                const imageUrl = `./img/${data.filename}`;
+                                var activeImage = document.getElementById('imgActive');
 
-
-
-
-
+                                const imageUrl = `./img/${data.filename}?timestamp=${new Date().getTime()}`;
                                 // Verificar si la imagen activa se encontró antes de intentar actualizar el src
                                 if (activeImage) {
-
                                     activeImage.src = imageUrl;
+                                    correoImagen();
+
                                 } else {
                                     console.error('Error: No se encontró la imagen activa en el DOM.');
                                 }
@@ -141,4 +140,83 @@ function estrellas() {
             $(this).parent().find('input[name=rating]').val(rating);
         });
     });
+}
+
+// correo de cambio
+
+function correoImagen() {
+    var ajaxCorreo = new XMLHttpRequest();
+    ajaxCorreo.open('POST', './inc/correoAlerta.php');
+    ajaxCorreo.onload = function() {
+        if (ajaxCorreo.status == 200) {
+            console.log(ajaxCorreo.responseText);
+            if (ajaxCorreo.responseText == 'mal') {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'No se a podido enviar el correo.',
+                    showConfirmButton: false,
+                    toast: true,
+                    timer: 3000, // Cerrar después de 2 segundos
+                    customClass: {
+                        title: 'my-custom-title-class' // Clase personalizada para el título
+                    },
+                    onOpen: () => {
+                        // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                        const titleElement = document.querySelector('.my-custom-title-class');
+                        if (titleElement) {
+                            titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                        }
+                    }
+                });
+            } else {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'Aviso de cambio de banner enviado.',
+                    showConfirmButton: false,
+                    toast: true,
+                    timer: 2000, // Cerrar después de 2 segundos
+                    customClass: {
+                        title: 'my-custom-title-class' // Clase personalizada para el título
+                    },
+                    onOpen: () => {
+                        // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                        const titleElement = document.querySelector('.my-custom-title-class');
+                        if (titleElement) {
+                            titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                        }
+                    }
+                });
+            }
+
+        } else {
+            Swal.fire({
+                position: 'top-end',
+                title: 'No se a podio enviar el correo.',
+                showConfirmButton: false,
+                toast: true,
+                timer: 2000, // Cerrar después de 2 segundos
+                customClass: {
+                    title: 'my-custom-title-class' // Clase personalizada para el título
+                },
+                onOpen: () => {
+                    // Selecciona el elemento del título y ajusta el tamaño de la fuente
+                    const titleElement = document.querySelector('.my-custom-title-class');
+                    if (titleElement) {
+                        titleElement.style.fontSize = '18px'; // Ajusta el tamaño de la fuente según tus preferencias
+                    }
+                }
+            });
+        }
+    };
+    ajaxCorreo.onerror = function() {
+        console.log('Error en la solicitud AJAX');
+    };
+    var emailRe = document.getElementById("emailRes");
+    emails = emailRe.innerHTML;
+    var nombreRes = document.getElementById("nombreRes");
+    nombre = nombreRes.innerHTML;
+    var formReg = new FormData();
+    formReg.append("email", emails);
+    formReg.append("nombre", nombre);
+    ajaxCorreo.send(formReg);
 }

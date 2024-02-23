@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])){
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tipo'])) {
     $targetDirectory = '../img/';
     // echo $_POST['tipo'];
-    $targetName = $_POST['tipo'] . '.jpg';
+    $targetName = 'ban'.$_POST['tipo'] . '.jpg';
     $targetFile = $targetDirectory . $targetName;
     // basename($_FILES['file']['name']);
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));

@@ -58,7 +58,8 @@ if (!isset($_SESSION['username'])) {
                 <option value="5">De 40€ a 50€</option>
                 <option value="6">Mas de 50€</option>
             </select>
-            <select name="" id="" class="mi-select">
+            
+            <select name="" id="tipoC" class="mi-select">
                 <option value="">tipo de comida</option>
                 <?php
                 $sql = "SELECT * FROM tipo_comida";
@@ -70,6 +71,8 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </select>
+            <button id="resetF" class="">Resetear</button>
+
         </div>
         <br>
         <div>
