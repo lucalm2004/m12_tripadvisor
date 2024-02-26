@@ -1,37 +1,47 @@
 # Proyecto TripAdvisor
 
-Bienvenido al proyecto TripAdvisor, una plataforma web diseñada para permitir a los usuarios compartir reseñas y experiencias sobre restaurantes. Este documento proporciona una visión general del proyecto, su funcionamiento, ubicación de la base de datos y los miembros del equipo que contribuyeron al desarrollo.
+¡Bienvenido a nuestro emocionante proyecto TripAdvisor!
 
 ## Descripción del Proyecto
 
-El proyecto TripAdvisor es una aplicación web inspirada en la famosa plataforma de reseñas de restaurantes. Permite a los usuarios buscar restaurantes según diferentes criterios, ver detalles y reseñas de cada restaurante, y compartir sus propias experiencias. La interfaz de usuario es intuitiva y fácil de usar, con características avanzadas como filtros de búsqueda, actualización automática de contenido y modal de restaurante detallado.
+El proyecto TripAdvisor es una plataforma web diseñada para permitir a los usuarios compartir reseñas y experiencias sobre restaurantes. Inspirada en la famosa plataforma homónima, nuestra aplicación ofrece una experiencia de usuario intuitiva y llena de funcionalidades.
 
 ## Funcionamiento
 
-El proyecto se basa en un buscador principal con tres filtros clave: estrellas, precio y tipo de comida. Estos filtros permiten a los usuarios refinar su búsqueda y encontrar restaurantes específicos según sus preferencias. Además, se incluye un botón de reinicio para restablecer los filtros a sus valores predeterminados.
+### Buscador Principal
 
-La aplicación utiliza tecnología AJAX para mejorar la experiencia del usuario, permitiendo la carga dinámica de contenido sin necesidad de recargar la página. Esto se aplica tanto en la búsqueda de restaurantes como en la visualización de detalles de cada restaurante, lo que proporciona una experiencia fluida y rápida.
+El corazón de nuestra aplicación es nuestro potente buscador. Con tres filtros clave: estrellas, precio y tipo de comida, los usuarios pueden refinar su búsqueda y encontrar el restaurante perfecto para su ocasión. ¡Y si necesitan empezar de nuevo, tenemos un botón de reinicio listo para ellos!
 
-Cada restaurante tiene su propia página de detalles, accesible a través de un modal, que muestra información detallada sobre el restaurante, incluyendo reseñas de otros usuarios y una caja de comentarios con calificación por estrellas.
+### Tecnología AJAX
 
-Además, la página principal cuenta con dos banners dinámicos que muestran el restaurante más caro y el más barato según los precios registrados en la base de datos.
+Gracias a la tecnología AJAX, la experiencia de navegación es fluida y rápida. No más tiempos de carga largos; todo se actualiza dinámicamente sin necesidad de recargar la página.
 
-Para mantener la información actualizada, el contenido se actualiza automáticamente cada minuto, lo que garantiza que los usuarios siempre tengan acceso a datos frescos y relevantes.
+### Detalles del Restaurante
+
+Cada restaurante tiene su propia página de detalles. Accesible a través de un modal elegante, los usuarios pueden explorar información detallada, reseñas de otros usuarios y dejar sus propios comentarios y calificaciones.
+
+### Banners Dinámicos
+
+En la página principal, destacamos los restaurantes más caros y más baratos con nuestros banners dinámicos. ¡Así que siempre sabrás dónde encontrar la mejor oferta o la experiencia más lujosa!
+
+### Actualización Automática
+
+Para mantener la información fresca y relevante, actualizamos automáticamente el contenido cada minuto. ¡Nunca te pierdas una nueva reseña o un cambio en los precios!
 
 ## Ubicación de la Base de Datos
 
-La base de datos del proyecto se encuentra en la carpeta `inc/conexion.php` y lleva el nombre `db_tripadvisor`. Esta base de datos almacena toda la información relevante sobre los restaurantes, incluyendo detalles, reseñas, comentarios y precios.
+La base de datos del proyecto reside en la carpeta `inc/conexion.php` con el nombre `db_tripadvisor`. Aquí es donde almacenamos todos los detalles importantes, desde la información de los restaurantes hasta las reseñas y comentarios de los usuarios.
 
 ## Miembros del Equipo
 
-El desarrollo de este proyecto ha sido posible gracias al esfuerzo y dedicación de los siguientes miembros del equipo:
+El desarrollo de este emocionante proyecto ha sido posible gracias al arduo trabajo y la dedicación de nuestro talentoso equipo:
 
-- Manel García
-- Alberto Bermejo
-- Ian Romero
-- Luca Lusuardi
+- **Manel García**
+- **Alberto Bermejo**
+- **Ian Romero**
+- **Luca Lusuardi**
 
-Cada miembro ha contribuido con sus habilidades y conocimientos para hacer de este proyecto una realidad.
+Cada uno de nuestros miembros ha aportado sus habilidades y conocimientos únicos para hacer de TripAdvisor una realidad impresionante.
 
-¡Gracias por visitar nuestro proyecto TripAdvisor!
+¡Gracias por ser parte de nuestro viaje!
 
