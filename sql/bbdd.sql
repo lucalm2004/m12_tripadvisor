@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_tripadvisor`.`tbl_restaurante` (
   `id_restaurante` INT NOT NULL AUTO_INCREMENT,
-  `nombre_restuarante` VARCHAR(45) NULL,
+  `nombre_restaurante` VARCHAR(45) NULL,
   `propietario` INT NULL,
   `direccion` TEXT NULL,
   `valoracion` DECIMAL(2,1) NULL,
@@ -211,7 +211,7 @@ INSERT INTO `tbl_user` (`id_user`, `username`, `mail`, `pwd`, `nombre_completo`,
 (19, 'admin9', 'admin9@example.com', 'adminpass9', 'Admin Nine', 1, 1),
 (20, 'admin10', 'admin10@example.com', 'adminpass10', 'Admin Ten', 1, 1);
 
-INSERT INTO `tbl_restaurante` (`id_restaurante`, `nombre_restuarante`, `propietario`, `direccion`, `valoracion`, `precio_medio`, `imagen_res`, `email_oficial`) VALUES
+INSERT INTO `tbl_restaurante` (`id_restaurante`, `nombre_restaurante`, `propietario`, `direccion`, `valoracion`, `precio_medio`, `imagen_res`, `email_oficial`) VALUES
 (1, 'Restaurant One', 1, '123 Main St, Cityville', 4.5, 25.00, 'res1.jpg', 'info@restaurantone.com'),
 (2, 'Restaurant Two', 2, '456 Elm St, Townsville', 3.8, 20.00, 'res2.jpg', 'info@restauranttwo.com'),
 (3, 'Restaurant Three', 3, '789 Oak St, Villageton', 5.0, 30.00, 'res3.jpg', 'info@restaurantthree.com'),
