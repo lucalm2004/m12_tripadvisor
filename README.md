@@ -27,7 +27,7 @@ La base de datos del proyecto se encuentra en la carpeta `inc/conexion.php` y ll
 El desarrollo de este proyecto ha sido posible gracias al esfuerzo y dedicación de los siguientes miembros del equipo:
 
 - Manel García
-- Alberto Moreno
+- Alberto Bermejo
 - Ian Romero
 - Luca Lusuardi
 
