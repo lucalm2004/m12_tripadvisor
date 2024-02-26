@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:wght@700&family=Oxygen:wght@300;400;700&family=Vesper+Libre:wght@700&display=swap');
+
 * {
     font-family: "Oxygen", sans-serif;
     font-weight: 300;
@@ -6,36 +7,43 @@
 }
 
 .divL {
-    margin: 20px;
+    margin: 2vw;
 }
 
 .form {
-    padding: 20px;
+    padding: 2vw;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    width: 300px;
+    width: 24vw;
 }
 
-label {
+form label {
+    font-size: 1.4vw;
     font-weight: bold;
+}
+
+.form img {
+    width: 16vw;
 }
 
 input[type="text"],
 [type="password"] {
     width: 100%;
-    padding: 8px;
-    margin: 5px 0;
+    height: 2.6vw;
+    padding: 0.8vw;
+    margin: 0.5vw 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .button1 {
+    font-size: 1.4vw;
     background-color: #00be6f;
     color: white;
-    padding: 10px 20px;
-    margin: 8px 0;
+    padding: 0.7vw 1.4vw;
+    margin: 0.8vw 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -99,8 +107,8 @@ img {
 
 .boton {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 0.7vw 1.4vw;
+    font-size: 1.2vw;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -120,31 +128,29 @@ img {
 .boton2 {
     margin-left: 30px;
     display: inline-block;
-    font-size: 18px;
+    font-size: 1.4vw;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     border-radius: 4px;
     color: black;
-    transition: background-color 0.3s;
+    transition: color 0.3s;
     background-color: transparent;
     border-color: transparent;
 }
 
 .salir {
-    float: right;
-    margin-top: 2%;
-    margin-right: 5%;
-    /* display: inline-block; */
-    font-size: 18px;
+    margin-left: 18vw;
+    display: inline-block;
+    font-size: 1.4vw;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     border-radius: 4px;
     color: black;
-    transition: background-color 0.3s;
+    transition: color 0.3s;
     background-color: transparent;
     border-color: transparent;
 }
@@ -188,19 +194,19 @@ img {
     background-color: #edeaea;
     z-index: 1;
     top: 0px;
-    left: 0px!important;
-    right: 0px!important;
+    left: 0px !important;
+    right: 0px !important;
     height: 100%;
     width: 97%;
     display: none;
-    padding-right: 0px!important;
+    padding-right: 0px !important;
     margin-right: 0.5%;
     margin-left: 0.5%;
     z-index: 4;
 }
 
 .navbar {
-    padding: 20px;
+    padding: 2%;
     background-color: white;
     border-bottom: solid green 3px;
     position: fixed;
@@ -219,14 +225,18 @@ img {
     align-items: center;
     /* Centra horizontalmente el contenido */
     background-color: white;
-    padding-top: 100px;
+    padding-top: 10vw;
     /* Asegúrate de que el div ocupe todo el espacio disponible en la pantalla */
     width: 100%;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 3.8vw;
     font-weight: bold;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .filtros {
@@ -239,7 +249,7 @@ h1 {
 }
 
 .logo {
-    width: 200px;
+    width: 14vw;
     margin-right: 20px;
 }
 
@@ -253,6 +263,14 @@ h1 {
     font-weight: bold;
     font-size: 100%;
     margin-top: 3%;
+}
+
+.numeroR2 {
+    color: #00be6f;
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 0.5vw;
+    margin-bottom: 1vw;
 }
 
 .restaurante {
@@ -273,7 +291,7 @@ h1 {
 }
 
 .lupa {
-    padding: 2px;
+    padding: 0.1vw;
     background-color: white;
     /* position: relative; */
     display: inline-block;
@@ -283,11 +301,12 @@ h1 {
 }
 
 .campo-busqueda {
+    font-size: 1.2vw;
     background-color: transparent;
-    width: 600px;
+    width: 52vw;
     /* Ancho del campo de búsqueda */
-    height: 50px;
-    padding: 10px;
+    height: 4vw;
+    padding: 1vw;
     /* Espaciado interno */
     outline: none;
     border: transparent;
@@ -313,7 +332,7 @@ h1 {
 }
 
 .botonL {
-    padding: 15px 20px;
+    padding: 1.1vw 1.4vw;
     /* Espaciado interno */
     background-color: #55e480;
     /* Color de fondo del botón */
@@ -323,7 +342,8 @@ h1 {
     border-radius: 20px;
     /* Borde redondeado */
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 1vw;
+    font-size: 1.2vw;
     /* Espacio entre el campo de búsqueda y el botón */
 }
 
@@ -333,16 +353,16 @@ h1 {
 }
 
 .mi-select {
-    margin-left: 10px;
-    padding: 10px;
+    margin-left: 1vw;
+    padding: 1vw;
     /* Espaciado interno */
-    font-size: 16px;
+    font-size: 1.3vw;
     /* Tamaño de fuente */
     border-radius: 5px;
     /* Borde redondeado */
     outline: none;
     /* Eliminar el contorno de foco */
-    width: 200px;
+    width: 14vw;
     /* Ancho del select */
     cursor: pointer;
     /* Cursor al pasar sobre el select */
@@ -367,7 +387,8 @@ h1 {
 }
 
 .footer ul li {
-    margin-bottom: 5px;
+    margin-bottom: 0.4vw;
+    font-size: 1.2vw;
 }
 
 a {
@@ -400,54 +421,79 @@ ul {
 }
 
 .swal2-styled.swal2-confirm {
-    background-color: #28a745!important;
+    background-color: #28a745 !important;
 }
 
 .btnImagen {
     position: absolute;
-    top: 25.2%;
-    right: 4.5%;
+    top: 15.6vw;
+    right: 4.4%;
     z-index: 1;
     background-color: #28a745;
     color: #fff;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1vw;
+    border-radius: 20px;
 }
 
 .h1R {
-    font-size: 30px;
+    font-size: 2.2vw;
     margin-right: 5%;
+}
+
+.tn {
+    font-size: 1.5vw;
 }
 
 .columna {
     background-color: white;
-    margin-right: 20px;
+    margin-right: 1.6vw;
     float: left;
-    width: 31%;
+    width: 29.4vw;
     /* Ajusta el ancho según tus necesidades */
-    padding: 15px;
+    padding: 1.2vw;
     /* Espacio interno horizontal */
     box-sizing: border-box;
     /* Esto asegura que el padding no afecte al ancho */
-    text-align: center;
     /* Centra el contenido horizontalmente */
     height: 60%;
+    border-radius: 20px;
+}
+
+.columna label {
+    font-size: 1.5vw;
+}
+
+.columna p {
+    font-size: 1.4vw;
+}
+
+.columna h2 {
+    font-size: 1.8vw;
 }
 
 .columna2 {
     background-color: white;
     float: left;
-    width: 31%;
+    width: 29.3vw;
     /* Ajusta el ancho según tus necesidades */
-    padding: 0 15px;
+    padding: 0 1vw;
     /* Espacio interno horizontal */
     box-sizing: border-box;
     /* Esto asegura que el padding no afecte al ancho */
-    text-align: center;
     /* Centra el contenido horizontalmente */
     height: 60%;
+    border-radius: 20px;
+}
+
+.columna2 label {
+    font-size: 1.5vw;
+}
+
+.columna2 p {
+    font-size: 1.4vw;
 }
 
 .tituloR {
@@ -455,6 +501,7 @@ ul {
     padding-left: 2%;
     background-color: white;
     margin-right: 4.5%;
+    border-radius: 20px;
 }
 
 .cerrar {
@@ -490,15 +537,20 @@ ul {
 }
 
 .wrapper {
-    max-width: 1100px;
-    width: 100%;
+    width: 96%;
     position: relative;
 }
 
 .estrella_foto {
-    /* max-width: 200px;
-    height: 7%; */
-    width: 100px !important;
+    width: 6vw !important;
+}
+
+.estrella_foto2 {
+    width: 10vw !important;
+}
+
+.estrella_foto3 {
+    width: 8vw !important;
 }
 
 .valoraciones {
@@ -538,7 +590,7 @@ ul {
 .wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 4) - 12px);
+    grid-auto-columns: calc((100% / 4) - 1.2vw);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     /* gap: -20px; */
@@ -566,7 +618,7 @@ ul {
 }
 
 .carousel :where(.card,
-.img) {
+    .img) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -574,45 +626,46 @@ ul {
 
 .carousel .card {
     scroll-snap-align: start;
-    height: 342px;
+    height: 25.5vw;
     list-style: none;
     cursor: pointer;
     padding-bottom: 0px;
     flex-direction: column;
     border-radius: 8px;
-    width: 240px;
+    width: 95%;
     align-items: first baseline;
 }
 
 .carousel .card .img {
-    background: #8B53FF;
-    height: 148px;
-    width: 240px;
-    margin-top: 10%;
+    height: 19vw;
+    width: 19vw;
     border-radius: 5px;
 }
 
 .card .img img {
-    width: 240px;
-    height: 240px;
+    margin-bottom: -14%;
+    width: 19vw;
+    height: 19vw;
     border-radius: 5px;
-    /* border-radius: 50%; */
-    /* object-fit: cover;
-    border: 4px solid #fff; */
 }
 
 .carousel .card label {
     font-weight: bold;
-    margin-right: 100px;
+    margin-right: 1vw;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 1.4vw;
     /* margin: 50px 0 5px;*/
     margin-top: 50px;
     /* margin-left: -125px; */
 }
 
 .carousel .card span {
-    font-size: 12px;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.carousel .card strong {
+    font-size: 1.2vw;
     font-weight: bold;
 }
 
@@ -624,7 +677,7 @@ ul {
 }
 
 .fondoTar {
-    height: 360px;
+    height: 60%;
     padding-left: 6%;
     background-color: white;
     border-top: solid green 3px;
@@ -648,8 +701,8 @@ ul {
     height: 100%;
     border-radius: 5px;
     border: solid black;
-    width: 1076px;
-    margin-bottom: 2%;
+    width: 88%;
+    margin-bottom: -40px;
 }
 
 .h1O {
@@ -674,84 +727,6 @@ ul {
     }
 }
 
-@media screen and (min-width: 1600px) {
-    .boton2 {
-        font-size: 25px;
-    }
-    .salir {
-        font-size: 25px;
-        margin-top: 1%;
-    }
-}
-
-@media screen and (min-width: 1900px) {
-    .boton2 {
-        font-size: 26px;
-    }
-    .salir {
-        font-size: 26px;
-        margin-top: 1.5%;
-    }
-    .logo {
-        width: 280px;
-    }
-    li {
-        font-size: 25px;
-    }
-    .tn {
-        font-size: 25px;
-    }
-    h1 {
-        font-size: 60px;
-    }
-    .h1R {
-        font-size: 45px;
-    }
-    .campo-busqueda {
-        width: 1000px;
-        height: 70px;
-        font-size: 25px;
-    }
-    .botonL {
-        font-size: 25px;
-        margin-right: 4px;
-    }
-    .mi-select {
-        margin-left: 10px;
-        padding: 15px;
-        font-size: 25px;
-        width: 300px;
-    }
-    .lupa {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .h2M {
-        font-size: 40px;
-    }
-    .form {
-        padding: 40px;
-        width: 400px;
-    }
-    .labelL {
-        font-size: 25px;
-    }
-    input[type="text"],
-    [type="password"] {
-        height: 40px;
-    }
-    .button1 {
-        height: 40px;
-        font-size: 16px;
-    }
-    .boton {
-        font-size: 25px;
-    }
-}
-
-
-/* Estilos comentarios */
-
 .comentarios {
     margin-top: 31%;
     margin-left: 1%;
@@ -773,32 +748,38 @@ ul {
     /* Centra verticalmente los elementos */
 }
 
+h2 {
+    font-size: 2.2vw;
+}
+
 .review {
     border: 2px solid transparent;
     box-shadow: 0 0 0 2px #e0e0e0;
-    margin-left: -18px;
     resize: none;
     scrollbar-color: rgba(0, 0, 0, .6) transparent;
     scrollbar-width: thin;
-    width: calc(96.5% - 4px);
+    width: calc(95% - 6px);
     margin-bottom: 1%;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     padding-left: 1%;
     padding-top: 1%;
+    border-radius: 20px;
 }
 
 .botonReview {
     display: block;
-    background-color: black;
     color: white;
     border-radius: 28px;
-    font-size: 15px;
-    padding: 18px 50px;
-    margin-left: 84%;
-    margin-top: -50px;
+    font-size: 1.2vw;
+    padding: 1.1vw 3.2vw;
+    margin-left: 80vw;
+    margin-top: -4%;
     transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+    margin-bottom: 10%;
+    margin-right: 4.3%;
+    background-color: #00be6f;
 }
 
 .botonReview:hover {
@@ -817,6 +798,7 @@ ul {
 .bannerImg {
     height: 400px;
     width: 95.5%;
+    border-radius: 20px;
 }
 
 .aparecer {
@@ -828,6 +810,7 @@ ul {
     0% {
         transform: translate(0%, 100%);
     }
+
     100% {
         transform: translate(0%, 0%);
     }
@@ -842,8 +825,9 @@ ul {
         opacity: 1;
         transform: translateY(0);
     }
+
     100% {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(100%);
     }
 }
@@ -857,7 +841,7 @@ ul {
 }
 
 .reset {
-    width: 30px;
+    width: 2.2vw;
 }
 
 .anuncio2 {
@@ -869,12 +853,14 @@ ul {
     background-size: cover;
     display: flex;
     margin-left: 6%;
-    height: 600px;
+    height: 65vh;
     border-radius: 20px;
     border: 1px solid black;
     width: 86.5%;
     padding: 2%;
     padding-bottom: 4%;
+    margin-bottom: -40px;
+    margin-top: 5%;
 }
 
 .botonV {
@@ -904,7 +890,23 @@ ul {
     font-size: inherit;
     line-height: inherit;
     padding-left: 1%;
-    padding-top: 1%;
+    padding-bottom: 1%;
     border-radius: 10px;
     background-color: white;
 }
+
+.review2 p {
+    font-size: 1.4vw;
+}
+
+.checkboxComents {
+    width: 1.4vw;
+}
+
+.checo label {
+    font-size: 1.4vw;
+}
+
+/* .rateyo{
+    width: 2vw!important;
+} */
