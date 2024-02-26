@@ -34,7 +34,7 @@ La base de datos del proyecto reside en la carpeta `inc/conexion.php` con el nom
 
 ## Miembros del Equipo
 
-El desarrollo de este emocionante proyecto ha sido posible gracias al arduo trabajo y la dedicación de nuestro talentoso equipo:
+El desarrollo de este emocionante proyecto ha sido posible gracias al este equipo de DAW2:
 
 - **Manel García**
 - **Alberto Bermejo**
@@ -42,6 +42,4 @@ El desarrollo de este emocionante proyecto ha sido posible gracias al arduo trab
 - **Luca Lusuardi**
 
 Cada uno de nuestros miembros ha aportado sus habilidades y conocimientos únicos para hacer de TripAdvisor una realidad impresionante.
-
-¡Gracias por ser parte de nuestro viaje!
 
